@@ -41,6 +41,7 @@ _This is not an comprehensive list of course, just a few examples:_
  4. sublime text config (wut?) — GitHub oAuth tokens.
  5. `config.json` (duh) — GitHub oAuth tokens, supposedly from Composer.
  6. `.gitconfig` — (duh) — GitHub auth / oAuth tokens.
+ 7. `.netrc` — (duh) passwords.
 2. Per-package stuff: both inside npm packages and on public git repos (not only limited to Github):
  1. `.npmrc` (duh) — npm auth. Always excluded from npm packages nowdays if you are using a recent 2.x/3.x npm version.
  2. `package.json` / `Gemfile` / `Gemfile.lock` (wut?) — people sometimes put their GitHub oAuth tokens inside them in a repo url. Ow!
@@ -232,5 +233,7 @@ _Note: GitHub has already been doing that, but it seems that that filter has not
 --
 
 Published: 2015-12-04.
+
+Historic revisions (which are not in this repo): https://gist.github.com/ChALkeR/7485b79f6ef15768a309/revisions?page=2
 
 If you have any questions to me, contact me over [Gitter](https://gitter.im/ChALkeR) (@ChALkeR) or IRC (ChALkeR@freenode).
