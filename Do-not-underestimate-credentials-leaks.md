@@ -224,6 +224,13 @@ _Note: I'm not affiliated with GitHub or npm, Inc., so everything below is prett
 7. **Why was April such a bad month for the ecosystem security?**
  
  No idea, really. Looks like coincidence to me.
+8. **What about automatic tools or pre-commit hooks that scan for credentials? Should I write/use one?**
+ 
+ While using an automatic checker would do no direct harm, most probably it would just give you a false sense of security, but will not protect you from the actual leak.
+ 
+ There are many ways how various credentials could leak, and a general purpose tool aimed to catch all kinds of credentials (even targeted exclusively towards leaks trough git repos or npm packages) would be quite complex and will inevitably be subject to both false negatives and false positives.
+ 
+ Instead, you should better review stuff that you publish. That includes commit review, package contents review before publishing them, config files review, logs review before sharing them. If you have a team of several developers — it would better to educate your devs more and make each commit go through an independent review instead of forcing your team to use some automatic tool. Also, don't forget about checking package contents.
 
 --
 
