@@ -20,7 +20,7 @@ I obtained direct access to the following packages (publishing on npm or/and Git
 * [Component](https://npmjs.org/package/component) (double, via two unrelated users),
 * [Connect](https://npmjs.org/package/connect), [koa](https://npmjs.org/package/koa), [co](https://npmjs.org/package/co), [tar](https://npmjs.org/package/tar), [css](https://npmjs.org/package/css), [gm](https://npmjs.org/package/gm), [csrf](https://npmjs.org/package/csrf), [keygrip](https://npmjs.org/package/keygrip), [jcarousel](https://npmjs.org/package/jcarousel), [serialport](https://npmjs.org/package/serialport), [basic-auth](https://npmjs.org/package/basic-auth), [lru-cache](https://npmjs.com/package/lru-cache), [inflight](https://npmjs.com/package/inflight), [mochify](https://npmjs.org/package/mochify), [denodeify](https://npmjs.org/package/denodeify), and a lot of other packages.
 
-Note that some of packages were exposed more than once via unrelated users.
+Note that some packages were exposed more than once via unrelated users.
 
 Some packages were indirectly affected — the packages that are not affected by themselves, but that depend on affected packages, so that installing such package installs an affected package.
 As an example: [Grunt](https://www.npmjs.com/package/grunt) depends on EventEmmiter2, so it was also indirectly affected.
@@ -230,7 +230,7 @@ _Note: I'm not affiliated with GitHub or npm, Inc., so everything below is prett
  
  There are many ways how various credentials could leak, and a general purpose tool aimed to catch all kinds of credentials (even targeted exclusively towards leaks trough git repos or npm packages) would be quite complex and will inevitably be subject to both false negatives and false positives.
  
- Instead, you should better review stuff that you publish. That includes commit review, package contents review before publishing them, config files review, logs review before sharing them. If you have a team of several developers — it would better to educate your devs more and make each commit go through an independent review instead of forcing your team to use some automatic tool. Also, don't forget about checking package contents.
+ Instead, you should better review stuff that you publish. That includes commit review, package contents review before publishing them, config files review, logs review before sharing them. If you have a team of several developers — it would be better to educate your devs more and make each commit go through an independent review instead of forcing your team to use some automatic tool. Also, don't forget about checking package contents.
 
 --
 
