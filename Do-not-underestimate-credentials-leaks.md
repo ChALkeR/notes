@@ -191,7 +191,7 @@ _Note: I'm not affiliated with GitHub or npm, Inc., so everything below is prett
     * After that, review if any changes were made to repos that you have access to.
     
       Note that changes that were possibly made from your account are not limited to commits authored by you, they could be authored by anyone.
-    *When in doubt — contact GitHub support.
+    * When in doubt — contact GitHub support.
 4. **How come no one noticed this earlier?**
  
  No idea. Perhaps no one checked.
