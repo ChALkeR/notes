@@ -235,7 +235,7 @@ _Note: I'm not affiliated with GitHub or npm, Inc., so everything below is prett
 --
 
 Special thanks to GitHub and npm teams for taking the issue seriously and patching their server side to automatically invalidate leaked tokens/passwords when they are published on their own service (GitHub repos for GitHub oAuth tokens, npm packages for npm tokens and passwords).
-_Note: GitHub has already been doing that, but it seems that that filter has not been catching all the cases._
+_Note: GitHub has already been doing that, but it seems that their filter has not been catching all the cases._
 
 --
 
