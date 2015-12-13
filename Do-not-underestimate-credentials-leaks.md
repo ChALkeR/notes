@@ -44,7 +44,7 @@ _This is not an comprehensive list of course, just a few examples:_
  7. `.netrc` — (duh) passwords.
 2. Per-package stuff: both inside npm packages and on public git repos (not only limited to Github):
  1. `.npmrc` (duh) — npm auth. Always excluded from npm packages nowdays if you are using a recent 2.x/3.x npm version.
- 2. `package.json` / `Gemfile` / `Gemfile.lock` (wut?) — people sometimes put their GitHub oAuth tokens inside them in a repo url. Ow!
+ 2. `package.json` / `Gemfile` / `Gemfile.lock` / `bower.json` (wut?) — people sometimes put their GitHub oAuth tokens inside them in a repo url. Ow!
  3. `config.gypi` — saves the build process environment (wut?). Old npm clients [leaking their credentials](https://github.com/npm/npm/releases/tag/v2.14.1) into the environment of child processes (in some cases) makes this even more dangerous.
  4. `travis.yml` (ow) — could contain sensitive stuff like API keys (including npm logins/passwords or authTokens). Not everyone uses the [encryption](http://docs.travis-ci.com/user/encryption-keys/). They should.
  5. `config.json` (duh) — GitHub oAuth tokens, supposedly from Composer. Also present in `composer.json`, `.travis.composer.config.json`, etc., and some configuration scripts.
