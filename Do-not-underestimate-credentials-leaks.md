@@ -159,16 +159,18 @@ _Note: I'm not affiliated with GitHub or npm, Inc., so everything below is prett
  _Note:_ This only affects users that are using an account at some registry (i.e. are registered at npmjs.org).
 2. **I was affected to credentials leak, what should I do?**
  1. **My npm `authToken` was leaked. What should I do now?**
-    * Revoke the affected authToken using `npm logout` on the machine where it was used (if that was not done for you already by npm support).
+    * Revoke the affected authToken using `npm logout` on the machine where it was used (if that was not done for you already by npm support) or using https://npmjs.com/settings/tokens.
     * Fix the source of the leak to make sure that you don't expose your `authToken` again.
     * After that, review any new versions of packages that you have access to and that were published from your account.
       
       Note that this is not only limited to the latest version, the attacker could publish a `1.0.4` version if there are `1.0.3` and `2.0.1` in an attempt to make the interference less noticeable (especially if 1.x branch is still being used more than 2.x).
     * When in doubt — contact npm support.
  2. **My npm password was leaked. What should I do now?**
-    * Change your password and contact npm support in order to revoke all your oAuth tokens (if that was not done already).
+    * Change your password, then revoke **all** your auth tokens using https://npmjs.com/settings/tokens.
       
-      Revoking all the oAuth tokens is necessary and can't be done by yourself — an attacker could have created an oAuth token that you are not aware of and that you can't see or revoke, and that token could still be functional.
+      Revoking all the tokens is necessary for two reasons:
+       * An attacker could have created a new token (using `npm login`) that would still be functional after a password change.
+       * The complete token list is available at the above link, so an attacker could just save the whole list and use those tokens even after you change the password.
     * If the password was shared with other accounts — secure those too, by resetting the password on those accounts and performing the other necessary actions.
     * Fix the source of the leak to make sure that you don't expose your password again.
     * After that, review any new versions of packages that you have access to and that were published from your account.
@@ -184,7 +186,7 @@ _Note: I'm not affiliated with GitHub or npm, Inc., so everything below is prett
       Note that changes that were possibly made from your account are not limited to commits authored by you, they could be authored by anyone.
     * When in doubt — contact GitHub support.
  4. **My GitHub password was leaked. What should I do now?**
-    * Change your password, revoke your oAuth tokens (if that was not done for you already by GitHub support).
+    * Change your password, then revoke your oAuth tokens (if that was not done for you already by GitHub support).
     * If possible — enable 2FA.
     * If the password was shared with other accounts — secure those too, by resetting the password on those accounts and performing the other necessary actions.
     * Fix the source of the leak to make sure that you don't expose your password again.
@@ -207,10 +209,15 @@ _Note: I'm not affiliated with GitHub or npm, Inc., so everything below is prett
  2. Don't underestimate credentials leaks (well, as well as other security risks).
  3. Don't make assumptions, better check. It turned out that some people weren't aware that npm packages everything in the current dir that's not ignored, some people somewhy were under an impression that it follows .git. _On a side note: I saw all kinds of irrelevant stuff being packaged._
  4. Plaintext passwords are bad. No, seriously. There were much more passwords leaked than tokens, and that's because people still have their password in .npmrc.
-  **If you have `_auth` or `_password` in your `.npmrc` — remove it**, and perform an `npm login` to generate an `_authToken` instead.
- 5. npm lacks a way to list or revoke all the authTokens. That is bad for the reasons described above.
     
-    I was told that this is being worked on.
+    **If you have `_auth` or `_password` in your `.npmrc` — remove it**, and perform an `npm login` to generate an `_authToken` instead.
+    
+    I opened https://github.com/npm/npm/issues/9866 to address that at npm side, but there seems to be no answer yet.
+ 5. ~~npm lacks a way to list or revoke all the authTokens. That is bad for the reasons described above.~~
+    
+    ~~I was told that this is being worked on.~~
+    
+    Solved now with https://npmjs.com/settings/tokens.
  6. There are a lot of people with publishing access to some popular packages, and I doubt that's really needed.
     
     I suspect that one of the reasons for this is to include some persons into the «Contributors» list on package page.
