@@ -16,7 +16,7 @@ Note: none of those describes any previously unknown vulnerability in Node.js, t
 
  1. [Node.js Buffer knows everything](./Buffer-knows-everything.md), describing the possible consequences of using unitialized `Buffer`s.
  2. [Node.js issue #4660](https://github.com/nodejs/node/issues/4660) — Buffer(number) is unsafe.
- 3. [Node.js pull #2584](https://github.com/nodejs/node/pull/2586) — buffer: introduce zero-fill option in constructor.
+ 3. [Node.js pull #2586](https://github.com/nodejs/node/pull/2586) — buffer: introduce zero-fill option in constructor.
  4. [Node.js pull #2574](https://github.com/nodejs/node/pull/2574) — doc: minor clarification in buffer.markdown.
  5. [Node.js archive pull #9104](https://github.com/nodejs/node-v0.x-archive/pull/9104) — Documentation update about Buffer initialization.
  6. [`ws` release](https://github.com/websockets/ws/releases/tag/1.0.1) fixing it's vulnerability caused by inaccurate `Buffer(number)` usage.
