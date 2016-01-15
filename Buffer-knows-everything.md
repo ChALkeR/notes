@@ -1,6 +1,6 @@
 # Node.js `Buffer` knows everything.
 
-*Note: this writeup has been lying under the hood for some time as a private gist, it's primary intent was to raise awareness of the danger of using unitialized `Buffer` objects. It describes only the current situation and recommendations (for Node.js v5.4.1 / v4.2.4 packages), but I hope that this issue will be solved in a better way on the Node.js side in later versions. I will post a follow-up with a proposed solution soon enough.*
+*Note: this writeup has been lying under the hood for some time as a private gist, its primary intent was to raise awareness of the danger of using unitialized `Buffer` objects. It describes only the current situation and recommendations (for Node.js v5.4.1 / v4.2.4 packages), but I hope that this issue will be solved in a better way on the Node.js side in later versions. I will post a follow-up with a proposed solution soon enough.*
 
 --
 
