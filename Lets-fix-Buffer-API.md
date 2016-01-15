@@ -25,6 +25,7 @@ Note: none of those describes any previously unknown vulnerability in Node.js, t
  7. [Node Security Project advisory 67](https://nodesecurity.io/advisories/67) on the above-mentioned `ws` issue.
  8. [Node Security Project advisory 68](https://nodesecurity.io/advisories/68) on the `bittorent-dht` inaccurate `Buffer(number)` usage.
  9. Private discussions.
+ 10. [Mongoose vulnerability](https://github.com/Automattic/mongoose/issues/3764) — assigning a number to the property that is `Buffer`-typed saves unitialized memory block to the DB. [POC](https://gist.github.com/ChALkeR/d4a8055625221b6e65f0).
 
 ## Is there a problem?
 
