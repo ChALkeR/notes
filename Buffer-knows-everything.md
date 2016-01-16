@@ -8,6 +8,8 @@
 
 Those `Buffer`s *will* contain http traffic to/from other clients, your db passwords, private certificates, your app source code and the content of configuration files.
 
+_This is not some kind of a newly-discovered bug, it's how the Buffer API was designed from the start — `Buffer(number)` is similar to `malloc()` in this sense. The fact that it could contain sensitive data is properly [documented](https://nodejs.org/api/buffer.html#buffer_new_buffer_size), just not everyone reads the documentation. I do not think that this API is well-designed, though, and my thoughts on how this situation could be improved are shared in a [follow-up post](Lets-fix-Buffer-API.md)._
+
 If you fully understand that and are aware of how to prevent it — you could stop reading this note now, there will be nothing new for you here. I have seen several people who are not aware of that, so this note will be used as a reference in such situations.
 
 ## So, what's the reason for that?
