@@ -8,6 +8,8 @@
 
 **Tl;dr: jump to [the proposed solution](#the-proposed-solution).** _Still, I strongly recommend reading the whole note before discussing it or expressing your opinion._
 
+*Note that the current behaviour of `Buffer()` is a by-design decision and does not contain unexpected bugs on the Node.js side. The fact that `Buffer(number)` could contain sensitive data is properly [documented](https://nodejs.org/api/buffer.html#buffer_new_buffer_size), the issues come from the potential errors in user code that this API is causing easy to make.*
+
 --
 
 ## Previous materials
