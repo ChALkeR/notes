@@ -28,6 +28,7 @@ Note: none of those describes any previously unknown vulnerability in Node.js, t
  8. [Node Security Project advisory 68](https://nodesecurity.io/advisories/68) on the `bittorent-dht` inaccurate `Buffer(number)` usage.
  9. Private discussions.
  10. [Mongoose vulnerability](https://github.com/Automattic/mongoose/issues/3764) — assigning a number to the property that is `Buffer`-typed saves uninitialized memory block to the DB. [POC](https://gist.github.com/ChALkeR/d4a8055625221b6e65f0).
+ 11. [Node.js pull #4514](https://github.com/nodejs/node/pull/4514) — buffer: throw if both length and enc are passed.
 
 ## Is there a problem?
 
