@@ -1,6 +1,6 @@
 # Node.js `Buffer` knows everything.
 
-*Note: this writeup has been lying under the hood for some time as a private gist, its primary intent was to raise awareness of the danger of using unitialized `Buffer` objects. It describes only the current situation and recommendations (for Node.js v5.4.1 / v4.2.4 packages), but I hope that this issue will be solved in a better way on the Node.js side in later versions. I will post a follow-up with a proposed solution soon enough.*
+*Note: this writeup has been lying under the hood for some time as a private gist, its primary intent was to raise awareness of the danger of using uninitialized `Buffer` objects. It describes only the current situation and recommendations (for Node.js v5.4.1 / v4.2.4 packages), but I hope that this issue will be solved in a better way on the Node.js side in later versions. I will post a follow-up with a proposed solution soon enough.*
 
 --
 
@@ -128,7 +128,7 @@ Make sure that all your `Buffer` objects are initialized.
 
 The best way would be to allocate `Buffer`s in a form of `var buf = new Buffer(size).fill(0)` — in this case you can immediately see that the buffer is initialized on the exact same line. This is useful for performing quick checks using `grep` to find where `Buffer`s are manually allocated.
 
-If you are optimizing for speed in a hot code path, and are 100% sure what you are doing — it's perfectly fine that you use just `new Buffer(size)` and then fill in each byte manually. But please double check that you don't abort and return an partially unitialized `Buffer` in case of something going wrong (any error, etc).
+If you are optimizing for speed in a hot code path, and are 100% sure what you are doing — it's perfectly fine that you use just `new Buffer(size)` and then fill in each byte manually. But please double check that you don't abort and return an partially uninitialized `Buffer` in case of something going wrong (any error, etc).
 
 An example of _bad_ code:
 ```javascript
