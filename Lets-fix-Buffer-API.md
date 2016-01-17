@@ -16,7 +16,7 @@
 
 Note: none of those describes any previously unknown vulnerability in Node.js, this is how the API was designed. The problem is in the fact that it's very easy to use the current API in an unsafe way, and there were various libraries hitting that (and probably many more still are).
 
- 1. [Node.js Buffer knows everything](./Buffer-knows-everything.md), describing the possible consequences of using unitialized `Buffer`s.
+ 1. [Node.js Buffer knows everything](./Buffer-knows-everything.md), describing the possible consequences of using uninitialized `Buffer`s.
  2. [Node.js issue #4660](https://github.com/nodejs/node/issues/4660) — Buffer(number) is unsafe.
  3. [Node.js pull #2586](https://github.com/nodejs/node/pull/2586) — buffer: introduce zero-fill option in constructor.
  4. [Node.js pull #2574](https://github.com/nodejs/node/pull/2574) — doc: minor clarification in buffer.markdown.
@@ -27,7 +27,7 @@ Note: none of those describes any previously unknown vulnerability in Node.js, t
  7. [Node Security Project advisory 67](https://nodesecurity.io/advisories/67) on the above-mentioned `ws` issue.
  8. [Node Security Project advisory 68](https://nodesecurity.io/advisories/68) on the `bittorent-dht` inaccurate `Buffer(number)` usage.
  9. Private discussions.
- 10. [Mongoose vulnerability](https://github.com/Automattic/mongoose/issues/3764) — assigning a number to the property that is `Buffer`-typed saves unitialized memory block to the DB. [POC](https://gist.github.com/ChALkeR/d4a8055625221b6e65f0).
+ 10. [Mongoose vulnerability](https://github.com/Automattic/mongoose/issues/3764) — assigning a number to the property that is `Buffer`-typed saves uninitialized memory block to the DB. [POC](https://gist.github.com/ChALkeR/d4a8055625221b6e65f0).
 
 ## Is there a problem?
 
@@ -177,13 +177,13 @@ _Note: there are a lot of repetitions in this section, that's mainly because peo
  
  `Buffer.unsafe(number)` should be used only by those who are absolutely sure that they need it and are not leaking anything. 
   
-  Pointing people from `Buffer(number)` to `Buffer.safe(number)` instead of `Buffer.unsafe(number)` is needed only because this way people who do not care or are not sure what they are doing will get the correct method. People who are experienced enough to work with unitialized Buffers and who care about performance would be able to actually read the docs and find `Buffer.unsafe(number)`. Anyways, it's unsafe to work with unitialized buffers without reading the docs on those first (those will contain more warnings).
+  Pointing people from `Buffer(number)` to `Buffer.safe(number)` instead of `Buffer.unsafe(number)` is needed only because this way people who do not care or are not sure what they are doing will get the correct method. People who are experienced enough to work with uninitialized Buffers and who care about performance would be able to actually read the docs and find `Buffer.unsafe(number)`. Anyways, it's unsafe to work with uninitialized buffers without reading the docs on those first (those will contain more warnings).
  
  9. **Why not just an opt-in (e.g. command-line flag) for zero-filling all the `Buffer`s?**
  
  An opt-in will not fix the ecosystem — most setups will not know about it or will ignore it.
  
- Also, it will result in severe performance penalty — already safe code will receive double-zeroed `Buffer`s, hot code paths that were using unitialized buffers on a purpose will also receive zeroed `Buffer`s. Thus, an opt-in will introduce speed-vs-security tradeoff, and most managers will choose speed instead of security.
+ Also, it will result in severe performance penalty — already safe code will receive double-zeroed `Buffer`s, hot code paths that were using uninitialized buffers on a purpose will also receive zeroed `Buffer`s. Thus, an opt-in will introduce speed-vs-security tradeoff, and most managers will choose speed instead of security.
  
  Thanks to @joepie91 for [a nice clarification](https://github.com/nodejs/node/issues/4660#issuecomment-171449786) about this.
  
@@ -201,9 +201,9 @@ _Note: there are a lot of repetitions in this section, that's mainly because peo
 
  13. **Why not make the API look like `Buffer.allocate(number, isSafe=true)` instead of introducing two separate methods?**
 
-  The documentation on those methods should be separate, and it's very important. While `Buffer.safe(number)` could be documented as usually, `Buffer.unsafe(number)` documentation should describe all the dangers of using unitialized `Buffer`s. 
+  The documentation on those methods should be separate, and it's very important. While `Buffer.safe(number)` could be documented as usually, `Buffer.unsafe(number)` documentation should describe all the dangers of using uninitialized `Buffer`s. 
   
-  Also, that flag changes the behaviour of a function in an unobvious way (I have seen people failing to understand all implications of using unitialized buffers). The names for these functions should better be self-describing.
+  Also, that flag changes the behaviour of a function in an unobvious way (I have seen people failing to understand all implications of using uninitialized buffers). The names for these functions should better be self-describing.
   
   Merging two different methods with different behaviour into a one that changes it's behaviour depending on a flag isn't a good design move.
  
@@ -227,7 +227,7 @@ _Note: there are a lot of repetitions in this section, that's mainly because peo
  
  Please, read the proposal more carefully. The current proposal will not make anything slower — it will not change the `Buffer(number)` behaviour, just slowly deprecate it in favour of the new API that will provide the same functionality.
  
- It won't remove the alternative to use fast unitialized `Buffers` when the library author is sure what he or she is doing and knowingly wants it.
+ It won't remove the alternative to use fast uninitialized `Buffers` when the library author is sure what he or she is doing and knowingly wants it.
  
  It will give the library author the choice between using safe zero-filled `Buffer`s or potentially unsafe and fast non-zero-filled `Buffer`s, and will do that in a more obvious way (as it should have been done from the start).
 
