@@ -45,7 +45,7 @@ A better situation would be if the default method that an inexperienced coder wi
 
 The possible outcome of inaccurate `Buffer(number)` usage is leaking everything, including http traffic, configuration, source code files, private crypto keys, passwords, etc. (That is not theoretical — see [this](./Buffer-knows-everything.md) for code samples).
 
-##### Second one — accidental hitting of `Buffer(number)` when `Buffer(value)` was meant to use instead.
+##### Second one — accidental hitting of `Buffer(number)` when `Buffer(value)` was meant to be used instead.
 
 This is exactly what happened to `ws` (see materials [above](#previous-materials)).
 
