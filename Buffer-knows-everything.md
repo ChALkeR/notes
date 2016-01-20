@@ -14,7 +14,7 @@ If you fully understand that and are aware of how to prevent it — you could st
 
 ## So, what's the reason for that?
 
-`Buffer` objects, unlike TypedArrays, are not zero filled if created with a `new Buffer(size)` constructor (or its alias `Buffer(size)`). The memory that they use as the underlying storage could (and will) contain stuff that there was before the creation of this `Buffer`, most importantly — parts of other, previosly used `Buffer` objects that were garbage collected.
+`Buffer` objects, unlike TypedArrays, are not zero filled if created with a `new Buffer(size)` constructor (or its alias `Buffer(size)`). The memory that they use as the underlying storage could (and will) contain stuff that there was before the creation of this `Buffer`, most importantly — parts of other, previously used `Buffer` objects that were garbage collected.
 
 Also it should be taken into an account that pretty much every standard I/O operation in Node.js uses `Buffer`s — reading a file, requiring a module, receiving network traffic, passing stuff to the `crypto` module.
 
