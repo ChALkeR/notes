@@ -8,6 +8,8 @@ This vulnerability is already fixed at the mentioned CI services, but the same m
 
 I have tested several more, though, and they seem to be safe.
 
+[Travis blog post](https://blog.travis-ci.com/2016-07-07-security-advisory-encrypted-variables).
+
 ## Timeline
 
  1. Discovered on Travis CI: 2016-04-10
