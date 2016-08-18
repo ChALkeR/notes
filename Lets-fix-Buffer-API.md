@@ -4,7 +4,7 @@ _**Update 2016-08:** `Buffer.alloc()`, `Buffer.from()`, `Buffer.allocUnsafe()` a
 
 _This article still provides the explanation why you should absolutely favour the new API instead of the old API._
 
-_Note that the implications of using `Buffer.allocUnsafe()` and `Buffer.allocUnsafeSlow()` are covered in another article: [Buffer knows everything](../Buffer-knows-everything.md), and I highly recommend keeping those in mind while using those two methods (or better not using them at all if you are not sure)._
+_Note that the implications of using `Buffer.allocUnsafe()` and `Buffer.allocUnsafeSlow()` are covered in another article: [Buffer knows everything](Buffer-knows-everything.md), and I highly recommend keeping those in mind while using those two methods (or better not using them at all if you are not sure)._
 
 --
 
