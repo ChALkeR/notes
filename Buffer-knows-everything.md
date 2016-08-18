@@ -4,7 +4,7 @@
 
 --
 
-_**Update 2016-08:** to prevent this, use the [new Buffer API](https://nodejs.org/api/buffer.html) available in Node.js 4.5.0 and above and 6.0.0 and above — `Buffer.alloc()` and and `Buffer.from()` — those don't produce uninitialized memory chunks. For the older Node.js versions support, use the [shim](https://github.com/feross/safe-buffer) by @ferross._
+_**Update 2016-08:** to prevent this, use the [new Buffer API](https://nodejs.org/api/buffer.html) available in Node.js 4.5.0 and above and 6.0.0 and above — `Buffer.alloc()` and and `Buffer.from()` — those don't produce uninitialized memory chunks. For the older Node.js versions support, use the [shim](https://github.com/feross/safe-buffer) by @feross._
 
 _Everything below is applicable to `Buffer.allocUnsafe()`, though — only use that one if you are absolutely sure that you are not leaking uninitialized buffers under any circumstances._
 
