@@ -1,6 +1,6 @@
 # On npmjs.com tokens visibility, XSS, and clickjacking
 
-_Note: all of this has been reported to npm, Inc. on September (2016-09-04 and 2016-09-06)._ All active vulnerabilities listed here are already fixed. This should serve as a warning to others to not repeat the same mistakes in their setups._
+_Note: all of this has been reported to npm, Inc. on September (2016-09-04 and 2016-09-06). All active vulnerabilities listed here are already fixed. This should serve as a warning to others to not repeat the same mistakes in their setups._
 
 ## XSS targeting npm humans
 
