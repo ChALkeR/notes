@@ -145,7 +145,7 @@ _Note: `SameSite` should also be used to protect against potential HEIST attack,
 
 The file which the provided code snippet is extracted from is open-source and licensed under the ISC license. Links: [one](https://github.com/aredridel/newww/blob/master/adapters/bonbon.js#L119-L132), [two](https://github.com/ChALkeR/newww/blob/master/adapters/bonbon.js#L105-L118).
 
-The npmwww was turned into a closed-source project some time ago, but I found the `?json` vulnerability by inspecting their previously-released open-source copy (now removed from their org) and then was confirmed working on up-to-date <http://npmjs.com> in September. Some more info on the change is available [here](http://blog.npmjs.org/post/148119862590/out-with-the-newww-and-in-with-the-www-an-update) — that happened way before I found this vulnerability.
+The npm/newww repo was turned into a closed-source project some time ago, but I found the `?json` vulnerability by inspecting their previously-released open-source copy (now removed from their org) and then was confirmed working on up-to-date <http://npmjs.com> in September. Some more info on the change is available [here](http://blog.npmjs.org/post/148119862590/out-with-the-newww-and-in-with-the-www-an-update) — that happened way before I found this vulnerability.
 
 I didn't use any of these vulnerabilities to obtain npm auth tokens in any way, the proof-of-concept exploit examples that I used to showcase this to npm, Inc employees didn't transfer the obtained data anywhere.
 
