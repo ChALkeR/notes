@@ -18,6 +18,8 @@ Twitter username is not the only variable that could be used in such a way of co
 
 This was not filtered by CSP rules, as they were misconfigured.
 
+That XSS was trivially exploitable through a hidden iframe, effectively invisible, and it would have been pretty easy to use it to get direct publishing access to popular modules like [inherits](https://www.npmjs.com/package/inherits), [semver](https://www.npmjs.com/package/semver), [fstream](https://www.npmjs.com/package/fstream), [rimraf](https://www.npmjs.com/package/rimraf), [tar](https://www.npmjs.com/package/tar), and other ones — all of those are directly managed by npm humans. I'm pretty sure that almost everyone has at least one of those in their dependency chains.
+
 ### Unvalidated debug method
 
 The culprit here was the `?json=path` debug method that is enabled on the npm website just passes the resolved
