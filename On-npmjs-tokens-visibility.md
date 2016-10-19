@@ -22,7 +22,7 @@ That XSS was trivially exploitable through a hidden iframe, effectively invisibl
 
 ### Unvalidated debug method
 
-The culprit here was the `?json=path` debug method that is enabled on the npm website just passes the resolved
+The culprit here was the `?json=path` debug method that is enabled on the npm website, it just passed the resolved
 object to `reply()`:
 
 
