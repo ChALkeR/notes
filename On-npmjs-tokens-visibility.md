@@ -51,7 +51,7 @@ the same method could be used to execute some code on the server-side, very limi
 
 ### Misconfiguration of CSP
 
-CSP rules have depended on the page and were too loose on most of them, allowing
+CSP rules on <https://npmjs.com> depend on the page and were too loose on most of them, allowing
 `script-src * 'unsafe-inline'` and `img-src * data:`, e.g. on profile views or inside ones own
 settings.
 
@@ -70,7 +70,7 @@ resource, e.g. with `<img src="…{tokens}" />`.
 Also stealing the auth tokens is not the only possible action — an attacker could start adding
 themself as a collaborator on other users packages (as another example).
 
-And it doesn't matter that the page is less popular — an attacker could add a script that loads it
+It doesn't matter that the page is less popular — an attacker could add a script that loads it
 to some other website. The only less dangerous pages here are the ones that are accessible only by
 the user who modified them (self-xss), e.g. `profile-edit`, `email-edit`, etc., but note that this
 exception applies only to the data which is required to be saved safely from the same user to be
@@ -117,7 +117,7 @@ Also, providing full auth token on the webpage was a bad idea from the start.
 
 ![](media/npm-token-captcha.png)
 
-Note: just displaying the full token with some graphical effects as a CAPTCHA was just a PoC,
+Note: displaying the full token with some graphical effects as a CAPTCHA was just a PoC,
 the attacker could have split the token into several smaller captchas, made that unselectable,
 and add other graphical effects to it.
 
