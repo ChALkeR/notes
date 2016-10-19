@@ -5,7 +5,7 @@ _Note: all of this has been reported to npm, Inc. on September (2016-09-04 and 2
 ## XSS targeting npm humans
 
 It worked only on npm humans, more precisely — on people listed in
-[npm/humans/blob/master/humans.json](https://github.com/npm/humans/blob/master/humans.json).
+[npm/humans/humans.json](https://github.com/npm/humans/blob/master/humans.json).
 
 If the viewer was an npm human, opening
 <https://www.npmjs.com/~chalker?json=profile.resource.twitter> would reply with a raw string
@@ -157,4 +157,4 @@ In case you wonder, the token on the screenshot isn't an actual npm auth token a
 
 Published: 2016-10-18.
 
-If you have any questions to me, contact me over Gitter (@ChALkeR) or IRC (ChALkeR@freenode).
+If you have any questions to me, contact me over Gitter ([@ChALkeR](https://gitter.im/ChALkeR)) or IRC (ChALkeR@freenode).
