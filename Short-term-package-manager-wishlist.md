@@ -13,11 +13,11 @@ _Notice: this list might be updated in the future._
 ## Package manager client (`npm`)
 
  1. Drop or hard deprecate `_auth` and `_password` support, warn on seeing them even after dropping (important). [npm/npm#9866](https://github.com/npm/npm/issues/9866)
- 2. Warn on huge package size pre-publishing (with a confirmation Y/n). [npm/npm#8339](https://github.com/npm/npm/issues/8339), see also a list of real-world examples there.
- 3. Warn on other sanity check failures on the client (with a confirmation Y/n). Could be opt-in in v4 and opt-out in v5. [npm/npm#8617](https://github.com/npm/npm/issues/8617). Also a `package.json` field opt-out could be possible.
+ 2. Warn on huge package size pre-publishing (with a confirmation). [npm/npm#8339](https://github.com/npm/npm/issues/8339), see also a list of real-world examples there.
+ 3. Warn on other sanity check failures on the client (with a confirmation). Could be opt-in in v4 and opt-out in v5. [npm/npm#8617](https://github.com/npm/npm/issues/8617). Also a `package.json` field opt-out could be possible.
  4. Opt-out flag from loading `dependencies` from thirdparty servers (i.e. http or GitHub deps). Perhaps even opt-in in next major. Several percents of npm packages are affected afaik, counting nested deps.
  5. There are packages that prefer installing them with `-g`, and those provide executables that the user could run from any place. There should be also an option doing the opposite thing — warning when a package is being installed with `-g` but is not supposed to be, and that option should be turned on by default. There is no reason for packages that do not provide executables to be installed with `-g`, and we _do_ see users doing `sudo npm install -g graceful-fs`, [for example](https://github.com/npm/npm/issues/12502). Perhaps `allowGlobal` (off by default) would solve this. It would be ok to not block the install but print warnings.
- 6. Add a verbose mode for package publishing, perhaps even make it the default one. It should print the tree of files and overall stats (size) before publishing, and ask for a confirmation (Y/n). Non-verbose mode could be kept by default in v4 or under a flag in v5.
+ 6. Add a verbose mode for package publishing, perhaps even make it the default one. It should print the tree of files and overall stats (size) before publishing, and ask for a confirmation. Non-verbose mode could be kept by default in v4 or under a flag in v5.
  7. Make sure the user is notified of all post-install and pre-install scripts, perhaps with them requiring user confirmation. Perhaps even being disabled by default and causing a warning, telling to «re-run with a {flag} flag to execute the following commands: {postinstall list}».
  8. Replace or complement sha1 with sha256.
  9. `npm login` should warn the user to keep `.npmrc` private upon success.
