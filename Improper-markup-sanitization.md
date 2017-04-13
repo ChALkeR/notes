@@ -167,6 +167,8 @@ GitHub binds event handlers by class name at many places in their JS client-side
 
 Fixed in [v9.0.4/v8.17.5/v8.16.9](https://about.gitlab.com/2017/04/05/gitlab-9-dot-0-dot-4-security-release/).
 
+Disclosed on [HackerOne](https://hackerone.com/reports/216453).
+
 ![Fullsize message](/media/gitlab.fullsize.png)
 
 Pretty much the same issue as in GitHub, so I won't repeat myself.
