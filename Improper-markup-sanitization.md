@@ -47,7 +47,7 @@ So, what could go wrong?
     The tree structure should be correctly encoded in a HTML form, e.g. forgetting to encode HTML attributes and putting `"`
     there unescaped will break things very badly.
  6. **Mistakes through transferring.**
-    This is tangentially to applying transformations after sanitization.
+    This is tangentially related to applying transformations after sanitization.
     E.g. if the HTML is stored/passed in a JSON form, it should be property encoded to that JSON form when doing so.
     If it's not — the attacker could use JSON escape sequences that will get unescaped by the time the HTML will be inserted to
     the web page.
@@ -86,7 +86,7 @@ Let's say we want to add syntax code highlight to our shiny and secure model (as
 
 But wait, our library wants us to specify a `class` attribute on `code` or `pre` elements to hint the language which syntax do we want to highlight.
 
-So, what a programmer that doesn't think much about security at that point _or at least doesn't question why the rules for the sanitizer were written in the way they were present_, would do at this point?
+So, what a programmer that doesn't think much about security at that point _or at least doesn't question why the rules for the sanitizer were written in the way they were present_, would do there?
 
 ### tl;dr
 
@@ -236,7 +236,7 @@ PoC:
 
 Could you spot the difference with the screenshots for other projects? This one looks very suspicious.
 
-Redmine (in default setup) has relatively small amount of css rules and a small client-side JS file (which doesn't bind onclick handlers solely by the `class` attribute). Thus, the issue for the default Redmine setup has lower severity than for all other mentioned projects. The above screenshot was made with the default setup, though.
+Redmine (in default setup) has a relatively small number of css rules and a small client-side JS file (which doesn't bind onclick handlers solely by the `class` attribute). Thus, the issue for the default Redmine setup has lower severity than for all other mentioned projects. The above screenshot was made with the default setup, though.
 
 The severity could be raised in presence of various Redmine plugins that include their own js/css to the page, and installing thirdparty plugins is pretty popular in Redmine ecosystem.
 
@@ -342,13 +342,13 @@ _Not fixed, not treated as a security issue._
 
 _This has been publically disclosed on [jira.atlassian.com](https://jira.atlassian.com/) — see [below](#reporting-issues) for more info._
 
-JIRA is affected with the same unsanitized `class` attribute as the other ones.
+JIRA is affected with the same unsanitized `class` attribute problem as the other projects mentioned above.
 
 I notified them that _it gives the attacker an ability to exploit already existing CSS rules to style the content in an arbitrary way, and also allows them to use already present JS event listeners that are attached by class names_ (this is a citation).
 
 I did not try hard to actually perform a full attack through this, and, as usual, sent only basic PoC [samples](#samples) to Atlassian and explained why that is dangerous with links to other projects explanations.
 
-Atlassian decided that this is not a security issue, so I am now disclosing this so that their users would be aware.
+Atlassian decided that this is not a security issue, so I am now duplicating the disclosure here so that their users would be aware.
 
 > We are currently not looking for reports of issues of this type.
 > This page https://www.atlassian.com/trust/security/vulnerability-information-report shows what information we are looking for in a security report.
@@ -385,11 +385,11 @@ I mentioned that this is possible to Atlassian, they apparently do not think tha
 
 ~I am not sure in which direction I should continue from here, regarding the report to JIRA.~
 
-Atlassian security team closed the issue as «answered» and redirected me to [jira.atlassian.com](https://jira.atlassian.com/),
+~Atlassian security team closed the issue as «answered» and redirected me to [jira.atlassian.com](https://jira.atlassian.com/),
 saying that I should open a regular bugreport there instead.
 But I don't have permissions to open an issue there — it doesn't let me to.
 Instead, https://jira.atlassian.com/ redirects me to [support.atlassian.com](https://support.atlassian.com/), which demands a
-«JIRA Support Entitlement Number (SEN)» in order to report an issue — but I don't have anything like that.
+«JIRA Support Entitlement Number (SEN)» in order to report an issue — but I don't have anything like that.~
 
 ~I tried asking at various places how I should continue, but I didn't get any answer.~
 
