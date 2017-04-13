@@ -32,7 +32,7 @@ So, what could go wrong?
     Check if your markup library sanitizes things (e.g. already utilizes a good sanitizer).
     If it doesn't (some treat this as not their problems, and they are correct) — you need an external sanitizer.
  2. **Applying any transformations after sanitization.**
-    Any transformations applies after the sanitization are not sanitized themselves, and could produce unsafe code.
+    Any transformations applied after the sanitization are not sanitized themselves, and could produce unsafe code.
  3. **Sanitizing in the process of transformations.**
     This usually gets broken very quickly, for the reasons stated above.
     There are more places to make mistakes this way, also there could be various interplay between some transformations.
@@ -64,8 +64,8 @@ Make sure that:
     I have seen issues related to that (not mentioned here).
  4. You don't apply any transformation after the sanitization, including transfer errors.
  5. You use CSP which is not relaxed to a state where it does almost nothing.
- 6. You have carefully checked the OWASP [cheatsheet](https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet).
-    Better to add those examples to your tests, btw.
+ 6. You have carefully checked the OWASP [cheatsheet](https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet)
+    (and other similar ones that you might find on the internet). Better to add those examples to your tests, btw.
 
 ## Unsanitized `class` attribute
 [tl;dr](#tldr).
@@ -86,9 +86,9 @@ But wait, our library wants us to specify a `class` attribute on `code` or `pre`
 
 So, what a programmer that doesn't think much about security at that point _or at least doesn't question why the rules for the sanitizer were written in the way they were present_, would do at this point?
 
-**It looks like most of the affected projects (those with the common issue of `class` not being sanitized) carefully landed that loophole for the sake of code syntax highlighting, and allowed arbitrary `class` attributes on `code` and/or `pre` elements.**
-
 ### tl;dr
+
+**It looks like most of the affected projects (those with the common issue of `class` not being sanitized) carefully landed that loophole for the sake of code syntax highlighting, and allowed arbitrary `class` attributes on `code` and/or `pre` elements.**
 
 So `class` attribute was added to the exceptions for specific tags and was not sanitized for those tags, but why exactly is this bad? In fact, if there were no css or js on the webpage at all, there wouldn't be any difference. But in real world, there is a bunch of css rules and js code on all those pages, and both of those in most cases heavily rely on `class` properties of DOM elements.
 
@@ -309,7 +309,7 @@ Note that ███████████████████████�
 
 ### Upsource
 
-_Fixed in: v2017.1.1876/v2017.2.703/_.
+_Fixed in: v2017.1.1876/v2017.2.703_.
 
 The issue here is not related to `class` not being sanitized.
 
