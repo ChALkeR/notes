@@ -4,7 +4,7 @@ _[Featuring](#affected-software): GitHub, GitLab, {TBA}, Redmine, Gogs, JetBrain
 
 There are several common markup (mostly Markdown) sanitization issues outlined in this article, but I would be mostly speaking about the single, most common one.
 
-_If you don't care about the technical stuff, just skip to the [screenshots](#forged-content) and scroll down._
+_If you don't care about the technical stuff, just skip to the [screenshots](#github) and scroll down._
 
 ## Introduction
 
