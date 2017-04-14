@@ -394,7 +394,10 @@ Instead, https://jira.atlassian.com/ redirects me to [support.atlassian.com](htt
 ~I tried asking at various places how I should continue, but I didn't get any answer.~
 
 _Update: Atlassian security team helped me to open an issue on [jira.atlassian.com](https://jira.atlassian.com/):
-[JRACLOUD-66742](https://jira.atlassian.com/browse/JRACLOUD-66742), it is treated as low-priority non-security issue._
+[JRACLOUD-66742](https://jira.atlassian.com/browse/JRACLOUD-66742), ~~it is treated as low-priority non-security issue.~~_
+
+_Update 2: The issue linked above is private now, and it's treated as a medium priority security issue.
+There is no sense in removing the PoC from this writeup now, but it is understandable why the discussion in the ticket itself is private._
 
 ## Notes
 
