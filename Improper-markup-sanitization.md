@@ -399,6 +399,17 @@ _Update: Atlassian security team helped me to open an issue on [jira.atlassian.c
 _Update 2: The issue linked above is private now, and it's treated as a medium priority security issue.
 There is no sense in removing the PoC from this writeup now, but it is understandable why the discussion in the ticket itself is private._
 
+### npm
+
+npm, or, more specifically, [marky-markdown](https://github.com/npm/marky-markdown), allowed unsanitized `id` attributes through
+when the input was supplied in the HTML form.
+E.g. `<div id="foobar">Foo.</div>` was preserved as is in the output.
+
+To my knowledge, that didn't cause any actual issues on the npm website, though (or it could be that I didn't try hard enough).
+
+It was fixed in [marky-markdown](https://www.npmjs.com/package/marky-markdown) v9.0.3, and the fix was deployed on
+[npmjs.com](https://www.npmjs.com/).
+
 ## Notes
 
 No other user content was involved in the PoCs.
