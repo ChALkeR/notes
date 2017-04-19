@@ -313,7 +313,7 @@ Note that ███████████████████████�
 
 ### Upsource
 
-_Fixed in: v2017.1.1876/v2017.2.703_.
+_Fixed in: v2017.1.1876/v2017.1.1889/v2017.2.703_.
 
 The issue here is not related to `class` not being sanitized.
 
