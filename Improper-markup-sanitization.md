@@ -430,7 +430,7 @@ it is blindly followed — e.g. it basically says that clickjacking issues are n
 _Note: I did not discover and was not searching for clickjacking issues in Atlassian software, I am just commenting their policy._
 
 As another example, I think that PoCs and vulnerability details disclosure should be avoided until the issue is actually
-fixed, if possible — and at least two abovementioned projects managed to disclosed their PoCs prior to the fix while still
+fixed, if possible — and at least two abovementioned projects managed to disclose their PoCs prior to the fix while still
 treating the corresponding issues as security vulnerabilities.
 
 I believe there should be a good instruction on how to deal with security reports somewhere on the internet — if you are aware of
