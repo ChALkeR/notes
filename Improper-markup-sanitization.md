@@ -439,8 +439,8 @@ a good one, send me a link, I will include that link here.
 ---
 
 Published (partially): 2017-04-13, 9:01 UTC. \
-Updated with _TBA_ disclosure: _TBA_.
-Updated with _TBA 2_ disclosure: _TBA_.
+Updated with _TBA_ disclosure: _TBA_. \
+Updated with _TBA 2_ disclosure: _TBA_. \
 Updated with YouTrack disclosure: 2017-04-25, 9:34 UTC.
 
 If you have any questions to me, contact me over Gitter ([@ChALkeR](https://gitter.im/ChALkeR)) or IRC (ChALkeR@freenode).
