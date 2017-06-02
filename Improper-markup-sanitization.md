@@ -380,7 +380,7 @@ It attaches sample JS listener that pops up a dialog on click.
 
 * `!http://oserv.org/i.png|class=aui-blanket!` — blocks JIRA in issue comments on v6.3.9.
 * `!http://oserv.org/i.png|class=select2-drop-mask!` — blocks Servicedesk in issue comments.
-* `!http://oserv.org/i.png|aui-dialog2-header-close issueaction-fields-add!` — attaches to a sample JS listener on JIRA and Servicedesk.
+* `!http://oserv.org/i.png|class=aui-dialog2-header-close issueaction-fields-add!` — attaches to a sample JS listener on JIRA and Servicedesk.
 
 One can combine classes with `…|class=a b c d!`.
 
