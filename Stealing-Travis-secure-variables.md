@@ -96,5 +96,6 @@ It's quite obvious how to make those look like this:
 
 GitHub does not view anything mentioned here as a security issue on their side (including the zero-byte thing, I double-confirmed that), and they have supported raising the public awareness here so that the integrators would be more informed about the possible caveats here.
 
---
+---
+
 The fun thing is that it took me less than an hour to go from «could I somehow steal private variables from Travis» to the PoC above and about two hours to find the Travis security contact (yes, there is one).
