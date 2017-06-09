@@ -2,13 +2,13 @@
 
 *Note: this writeup has been lying under the hood for some time as a private gist, its primary intent was to raise awareness of the danger of using uninitialized `Buffer` objects. It describes only the current situation and recommendations (for Node.js v5.4.1 / v4.2.4 packages), but I hope that this issue will be solved in a better way on the Node.js side in later versions. I will post a follow-up with a proposed solution soon enough.*
 
---
+---
 
 _**Update 2016-08:** to prevent this, use the [new Buffer API](https://nodejs.org/api/buffer.html) available in Node.js 4.5.0 and above and 6.0.0 and above — `Buffer.alloc()` and and `Buffer.from()` — those don't produce uninitialized memory chunks. For the older Node.js versions support, use the [shim](https://github.com/feross/safe-buffer) by @feross._
 
 _Everything below is applicable to `Buffer.allocUnsafe()`, though — only use that one if you are absolutely sure that you are not leaking uninitialized buffers under any circumstances._
 
---
+---
 
 *Tl;dr: if your server-side code, under any circumstances, leaks uninitialized `Buffer`s to the client (including partially uninitialized), you are doomed.*
 
@@ -334,7 +334,7 @@ Refs:
 * https://github.com/nodejs/node/pull/2931
 * https://github.com/nodejs/node/pull/2995
 
---
+---
 
 Published: 2016-01-14.
 
