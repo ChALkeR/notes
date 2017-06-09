@@ -1,6 +1,9 @@
 # Let's fix Node.js Buffer API.
 
-_**Update 2016-08:** `Buffer.alloc()`, `Buffer.from()`, `Buffer.allocUnsafe()` and `Buffer.allowUnsafeSlow()` have been landed to Node.js upstream and are available in Node.js 4.5.0 and above and 6.0.0 and above. For the older Node.js versions support, use the [shim](https://github.com/feross/safe-buffer) by @feross._
+_**Update 2016-08:** `Buffer.alloc()`, `Buffer.from()`, `Buffer.allocUnsafe()` and `Buffer.allowUnsafeSlow()` have been landed to Node.js upstream and are available in Node.js 4.5.0 and above and 6.0.0 and above.
+~For the older Node.js versions support, use the [shim](https://github.com/feross/safe-buffer) by [@feross](https://github.com/feross).~_
+
+_**Update 2017-05:** I no longer recommend supporting those older Node.js versions (0.10/0.12/<4.5), those are unsupported by upstream since long ago now. Just use `Buffer.alloc` and `Buffer.from` everywhere now._
 
 _This article still provides the explanation why you should absolutely favour the new API instead of the old API._
 
