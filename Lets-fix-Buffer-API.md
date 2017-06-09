@@ -6,7 +6,7 @@ _This article still provides the explanation why you should absolutely favour th
 
 _Note that the implications of using `Buffer.allocUnsafe()` and `Buffer.allocUnsafeSlow()` are covered in another article: [Buffer knows everything](Buffer-knows-everything.md), and I highly recommend keeping those in mind while using those two methods (or better not using them at all if you are not sure)._
 
---
+---
 
 *Note: I am aware of various opinions on this issue. This post covers most of them in the [Q/A]() section. Please, read this whole document first before posting comments or expressing your opinion anywhere, it covers some issues that you might have missed.*
 
@@ -18,7 +18,7 @@ _Note that the implications of using `Buffer.allocUnsafe()` and `Buffer.allocUns
 
 *Note that the current behaviour of `Buffer()` is a by-design decision and does not contain unexpected bugs on the Node.js side. The fact that `Buffer(number)` could contain sensitive data is properly [documented](https://nodejs.org/api/buffer.html#buffer_new_buffer_size), the issues come from the potential errors in user code that this API is causing easy to make.*
 
---
+---
 
 ## Previous materials
 
@@ -268,7 +268,7 @@ _Note: there are a lot of repetitions in this section, that's mainly because peo
  
  See [things that should be noted](#things-that-should-be-noted) and point 3 of the current Q/A.
 
---
+---
 
 Published: 2016-01-15.
 
