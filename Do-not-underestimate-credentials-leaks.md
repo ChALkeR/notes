@@ -115,7 +115,7 @@ Fixed: user changed passwords.
 
 Window: April 2014 — August 2015.
 
---
+---
 
 There were a lot of other packages, I am not including all of them.
 
@@ -152,11 +152,11 @@ _Note: I'm not affiliated with GitHub or npm, Inc., so everything below is prett
      There is no guarantee that you (or anyone else) did not commit your email password or your db access string to either npm or GitHub. You should take care about that yourself.
 2. **Is my npm version fine?**
  
- Credentials leak to the into the environment of child processes was fixed in npm [v2.14.1](https://github.com/npm/npm/releases/tag/v2.14.1).
+   Credentials leak to the into the environment of child processes was fixed in npm [v2.14.1](https://github.com/npm/npm/releases/tag/v2.14.1).
  
- If your version is older that that (i.e. if you use Node.js v0.10 or v0.12.x lower than v0.12.8 and haven't updated `npm` manually) — you should update to the latest `npm` version in either `3.x` or `2.x` branch.
+   If your version is older that that (i.e. if you use Node.js v0.10 or v0.12.x lower than v0.12.8 and haven't updated `npm` manually) — you should update to the latest `npm` version in either `3.x` or `2.x` branch.
  
- _Note:_ This only affects users that are using an account at some registry (i.e. are registered at npmjs.org).
+   _Note:_ This only affects users that are using an account at some registry (i.e. are registered at npmjs.org).
 2. **I was affected to credentials leak, what should I do?**
  1. **My npm `authToken` was leaked. What should I do now?**
     * Revoke the affected authToken using `npm logout` on the machine where it was used (if that was not done for you already by npm support) or using https://npmjs.com/settings/tokens.
@@ -196,14 +196,14 @@ _Note: I'm not affiliated with GitHub or npm, Inc., so everything below is prett
     * When in doubt — contact GitHub support.
 4. **How come no one noticed this earlier?**
  
- No idea. Perhaps no one checked.
+   No idea. Perhaps no one checked.
 5. **Publishing that information about leaked tokens is bad, you shouldn't have done that.**
  
- Well, _not publishing_ this is much worse. People should be aware of dangers this brings, and should know what to do in case of credentials leaks.
+   Well, _not publishing_ this is much worse. People should be aware of dangers this brings, and should know what to do in case of credentials leaks.
  
- Also, people should better check what they publish, and this is an attmpt to make them more cautious.
+   Also, people should better check what they publish, and this is an attmpt to make them more cautious.
  
- I'm not pointing onto specific accounts or people. Please, don't try to find and accuse specific people based on the package names that I mentioned — that's not polite and will do no good, also the access configuration was changed for some packages since then, so you will probably get wrong results.
+   I'm not pointing onto specific accounts or people. Please, don't try to find and accuse specific people based on the package names that I mentioned — that's not polite and will do no good, also the access configuration was changed for some packages since then, so you will probably get wrong results.
 6. **What lessons should we learn here?**
  1. You should better watch your credentials.
  2. Don't underestimate credentials leaks (well, as well as other security risks).
@@ -230,21 +230,21 @@ _Note: I'm not affiliated with GitHub or npm, Inc., so everything below is prett
     Perhaps some visual view of version updates (not only the latest ones, but all branches) of the top downloaded packages would be nice.
 7. **Why was April such a bad month for the ecosystem security?**
  
- No idea, really. Looks like coincidence to me.
+   No idea, really. Looks like coincidence to me.
 8. **What about automatic tools or pre-commit hooks that scan for credentials? Should I write/use one?**
  
- While using an automatic checker would do no direct harm, most probably it would just give you a false sense of security, but will not protect you from the actual leak.
+   While using an automatic checker would do no direct harm, most probably it would just give you a false sense of security, but will not protect you from the actual leak.
  
- There are many ways how various credentials could leak, and a general purpose tool aimed to catch all kinds of credentials (even targeted exclusively towards leaks trough git repos or npm packages) would be quite complex and will inevitably be subject to both false negatives and false positives.
+   There are many ways how various credentials could leak, and a general purpose tool aimed to catch all kinds of credentials (even targeted exclusively towards leaks trough git repos or npm packages) would be quite complex and will inevitably be subject to both false negatives and false positives.
  
- Instead, you should better review stuff that you publish. That includes commit review, package contents review before publishing them, config files review, logs review before sharing them. If you have a team of several developers — it would be better to educate your devs more and make each commit go through an independent review instead of forcing your team to use some automatic tool. Also, don't forget about checking package contents.
+   Instead, you should better review stuff that you publish. That includes commit review, package contents review before publishing them, config files review, logs review before sharing them. If you have a team of several developers — it would be better to educate your devs more and make each commit go through an independent review instead of forcing your team to use some automatic tool. Also, don't forget about checking package contents.
 
---
+---
 
 Special thanks to GitHub and npm teams for taking the issue seriously and patching their server side to automatically invalidate leaked tokens/passwords when they are published on their own service (GitHub repos for GitHub oAuth tokens, npm packages for npm tokens and passwords).
 _Note: GitHub has already been doing that, but it seems that their filter has not been catching all the cases._
 
---
+---
 
 Published: 2015-12-04.
 
