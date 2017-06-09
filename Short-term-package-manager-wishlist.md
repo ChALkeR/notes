@@ -34,7 +34,7 @@ _Notice: this list might be updated in the future._
  3. Webpage-based notifications to any of the above (i.e. just a list of all write actions by oneself on npmjs.com).
  4. Don't actually publish packages with npm credentials, run scans _prior_ to the publishing, not _after_ the package was already published.
  5. Is there a proper bruteforce prevention mechanism running? I hadn't noticed it.
- 6. Warn users on too simple passwords — too short, known weak, same as login with minor modifications, etc.
+ 6. **Done.** ~~Warn users on too simple passwords — too short, known weak, same as login with minor modifications, etc.~~
 
 ## General ecosystem and communication, including website interface (public)
 
