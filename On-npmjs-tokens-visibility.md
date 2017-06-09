@@ -153,7 +153,7 @@ I didn't use any of these vulnerabilities to obtain npm auth tokens in any way, 
 
 In case you wonder, the token on the screenshot isn't an actual npm auth token and was used for demonstration purposes only, it's generated using ~~`int getRandomNumber() { return 4; }`~~ <http://randomuuid.net> :wink:.
 
---
+---
 
 Published: 2016-10-18.
 
