@@ -162,7 +162,7 @@ These are some of the packages that I got myself publish access to by collecting
 
 In total, there were 120 accounts and 582 packages.
 
-This is mostly covered in the [previous post](Do-not-underestimate-credentials-leaks.md) — I made a tool to automatically father those using the GitHub API, and validate gathered results on npm `/whoami`. I shared that tool with npm, Inc.
+This is mostly covered in the [previous post](Do-not-underestimate-credentials-leaks.md) — I made a tool to automatically gather those using the GitHub API, and validate gathered results on npm `/whoami`. I shared that tool with npm, Inc.
 
 Some of those were manually collected (i.e. not on GitHub) — for example, npm tokens appearing in CI.
 
