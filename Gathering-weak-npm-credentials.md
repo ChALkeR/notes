@@ -52,7 +52,7 @@ Taking dependencies into an account, to my estimations about 52% of the ecosyste
 * One of those 4 users from the top-20 list set their password back to the leaked one shortly after it was reset (so it got reset again).
 * At least one password was significantly inappropriate — to the extent that one wouldn't want that to be linked to them online and could be publicly blamed in that case (i.e. not just a swearword). [Don't use offensive passwords](https://medium.com/@malcomvetter/offensive-passwords-451371ccd02e) — those could (and in this case were) leaked to the public in cleartext.
 * **662 users had password «`123456`», 168 — «`123`», 115 — «`password`»**.
-* **10% of users reused their leaked passwords**: 9.4% — directly, and 0.6% — with very minor modifications.
+* **10% of users reused their leaked passwords**: 9.7% — directly, and 0.6% — with very minor modifications.
 * Total downloads/month of the unique packages which I got myself publish access to was 1 946 302 172, that's **20% of the total number of d/m** directly.
 
 ### Packages
