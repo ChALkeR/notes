@@ -4,6 +4,7 @@ I am not a native English speaker, so please excuse any language mistakes.
 
 Contents
 --
+ * [Gathering weak npm credentials](https://github.com/ChALkeR/notes-private5/blob/master/Gathering-weak-npm-credentials.md)  (2017-05-21)
  * [Improper markup sanitization in popular software](https://github.com/ChALkeR/notes/blob/master/Improper-markup-sanitization.md)  (2017-04-13)
  * [Short-term package manager wishlist](https://github.com/ChALkeR/notes/blob/master/Short-term-package-manager-wishlist.md)  (2016-11-03)
  * [On npmjs.com tokens visibility, XSS, and clickjacking](https://github.com/ChALkeR/notes/blob/master/On-npmjs-tokens-visibility.md) (2016-10-18)
