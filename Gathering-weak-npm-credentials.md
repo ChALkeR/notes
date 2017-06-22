@@ -1,5 +1,9 @@
 # Gathering weak npm credentials
 
+_Or how I obtained publish access to 13% of npm packages (including popular ones)._
+
+---
+
 In this post, I speak about three ways of gathering credentials — bruteforce attack, known accounts leaks from other sources (not npm), and npm credentials leaks on GitHub (and other places). _The last one was already covered in the [previous post](Do-not-underestimate-credentials-leaks.md), but it's still a valid source nowadays nevertheless._
 
 Also check out the npm, Inc [blog post](http://blog.npmjs.org/post/161515829950/credentials-resets) about this, if you haven't seen it already.
