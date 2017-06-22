@@ -1,6 +1,7 @@
 # Gathering weak npm credentials
 
-_Or how I obtained direct publish access to 13% of npm packages (including popular ones)._
+_Or how I obtained direct publish access to 13% of npm packages (including popular ones)._\
+_The estimated number of packages potentially reachable through dependency chains is 52%._
 
 ---
 
@@ -43,6 +44,9 @@ The main task of this post is to show the dangers of using weak/reused/leaked pa
 In total, there were 66876 public packages from 15495 accounts directly affected — about 13% of the whole npm ecosystem.
 
 Taking dependencies into an account, to my estimations about 52% of the ecosystem was affected — i.e. that number of packages install affected ones along with them through dependency chains.
+
+_That said, dependency chains and semver are not the culprits — grouping deps into larger modules wouldn't have fixed anything and breaking semver would have caused more security problems.
+I will (hopefully) cover that later, but [@joepie91](https://github.com/joepie91) has some notes about that in [his gist](https://gist.github.com/joepie91/828532657d23d512d76c1e68b101f436)._
 
 ### Overall
 * In total, I found **15568 valid credentials for 15495 accounts** since this May.
