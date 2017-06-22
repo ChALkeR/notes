@@ -1,6 +1,6 @@
 # Gathering weak npm credentials
 
-_Or how I obtained publish access to 13% of npm packages (including popular ones)._
+_Or how I obtained direct publish access to 13% of npm packages (including popular ones)._
 
 ---
 
