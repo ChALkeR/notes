@@ -20,7 +20,7 @@ If your token/password was revoked, it means that at least one of these cases ha
 
 And once again: **npm wasn't breached — your credentials came up from somewhere else**. You could check [haveibeenpwned.com](https://haveibeenpwned.com/) to get a hint on that.
 
-Note that apart a few accounts that asked for that, I did not point npm to the specific leaks through other services — some of those are sensitive, and because of that I didn't want to include specific sources for everyone. That said, I included the links to specific files on GitHub for npm credentials leaks through GitHub, and I labeled the weak/dictionary passwords as being weak — so npm support should have that data.
+Note that apart from a few accounts that asked for that, I did not point npm to the specific leaks through other services — some of those are sensitive, and because of that I didn't want to include specific sources for everyone. That said, I included the links to specific files on GitHub for npm credentials leaks through GitHub, and I labeled the weak/dictionary passwords as being weak — so npm support should have that data.
 
 If you still have questions that you _really_ want to be answered after checking with [haveibeenpwned.com](https://haveibeenpwned.com/) — contact me in Gitter, either in the [public room](https://gitter.im/chalker-notes) for common questions or [privately](https://gitter.im/ChALkeR). I will not be able to respond by email on this, and it will be harder for me to respond in IRC (Gitter accounts are linked to GitHub, so I can be reasonably sure to whom I am speaking).
 
