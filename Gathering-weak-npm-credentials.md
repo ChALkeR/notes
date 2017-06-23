@@ -204,7 +204,7 @@ Another thing necessary to mention is that bruteforce protection wouldn't have b
 
 By «fuzzing» I mean performing modifications to passwords gained from third-party leaks and attempting the modified password on npm.
 
-Fuzzing included (among other attempted modifications): changing the capitalization, attempting/removing digits (and other symbols) at the end, replacing company names with `npm`, appending/prepending `@npm` (and others), and other various changes. That was quickly achievable because there were already known potential passwords matched for each account — and there were not too many of those, so even multiplying those by one or two orders of magnitude (depending on the account significance) was possible.
+Fuzzing included (among other attempted modifications): changing the capitalization, appending/removing digits (and other symbols) at the end, replacing company names with `npm`, appending/prepending `@npm` (and others), and other various changes. That was quickly achievable because there were already known potential passwords matched for each account — and there were not too many of those, so even multiplying those by one or two orders of magnitude (depending on the account significance) was possible.
 
 That gave me 4786 packages from 732 accounts. The top package gained that way had 10 millon downloads/month, and the total was 171 174 218 d/m.
 
