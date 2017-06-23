@@ -19,7 +19,7 @@ If your token/password was revoked, it means that at least one of these cases ha
 1. You packaged your npm credentials inside an npm package — in this case, npm now revokes your credentials automatically.
 2. You published your token/password online yourself, e.g. uploaded it to a public GitHub repo, saved it in the CI logs, pasted to GitHub Gist, or did something similar.
 3. You were using a very weak password — though the extent to what I tried matching that depended on the overall downloads/month that you control, all of those were at the top part of weak password lists.
-4. You were reusing an old password that leaked from another site (e.g. through breaches, fishing, or anything) and your login+password or email+password combination is present in the public databases that basically anyone could download, and that could be used by malicious players.
+4. You were reusing an old password that leaked from another site (e.g. through breaches, phishing, or anything) and your login+password or email+password combination is present in the public databases that basically anyone could download, and that could be used by malicious players.
 
 **Once again — that is not a false alarm, change that password on every other site where you use it.** I was able to obtain it in cleartext by working with publicly available data.
 
