@@ -1,6 +1,6 @@
 # Improper markup sanitization in popular software
 
-_[Featuring](#affected-software): GitHub, GitLab, {TBA}, Redmine, Gogs, JetBrains, and others._
+_[Featuring](#affected-software): GitHub, GitLab, Bitbucket, Redmine, Gogs, JetBrains, and others._
 
 There are several common markup (mostly Markdown) sanitization issues outlined in this article, but I would be mostly speaking about the single, most common one.
 
@@ -108,16 +108,17 @@ Those already existing event handlers could be used by the attacker to execute s
 
 I have found and reported markup sanitization related issues in: \
 [GitHub](#github), [GitLab](#gitlab),
- _[TBA](#tba)_,
+[Bitbucket](#bitbucket),
 [Gogs](#gogs), [Gitea](#gitea), [Redmine](#redmine),
 _[TBA 2](#tba-2)_,
 [YouTrack](#youtrack),
 [Upsource](#upsource),
 [JIRA](#jira).
 
-Of those, [TBA](#tba), [TBA 2](#tba-2), [YouTrack](#youtrack), and [Upsource](#upsource) issues are not related to unsanitized `class` atribute.
-Note that the █████ ██████ █████ █████ ███████ ███ █████████████ — █████████ ████ ███ ███████ ████ ██████ ██ ████████ ██████, ███ ███████ ███████ █████████ ██████
-████████████. ████ ███████ ███████ ████████ ████████████ ████████ ████, though, and ██████ ███ ██████ ███ ████ ██ ██ ████████ ███████ writeup.
+Of those, [Butbucket](#bitbucket), [TBA 2](#tba-2), [YouTrack](#youtrack), and [Upsource](#upsource) issues are not related to unsanitized `class` atribute.
+Note that the first two of those don't satisfy the [prerequisites](#introduction) — Bitbucket does not support HTML markup in Markdown at all, and
+███████ ███████ █████████ ██████ ████████████.
+They managed to fail markup sanitization in other ways, though, and that's the reason for them to be included in this writeup.
 
 See below for the detailed vulnerabilities information, PoC examples and screenshots.
 
@@ -240,26 +241,57 @@ Redmine (in default setup) has a relatively small number of css rules and a smal
 
 The severity could be raised in presence of various Redmine plugins that include their own js/css to the page, and installing thirdparty plugins is pretty popular in Redmine ecosystem.
 
-### TBA
+### Bitbucket
+
+_Fixed at: 2017-06-20._
 
 The issue here is different and is not related to `class` not being sanitized.
 
-![XSS](/media/tba.xss.png)
+This is a full-featured XSS, with arbitrary JS code, achievable through issue comments (among other places).
 
-This is a full-featured XSS, with arbitrary JS code, achievable through █████████████████████ █████████████.
-
-PoC:
-```html
-TBA
+PoC 1, covers everything on the page with a div with an `onmouseover` event handler executing arbitrary JS code:
+```md
+The HTML specification is maintained by the W3C.
+*[HTML]: [Hyper Text Markup Language](http://example.com/bar/style='background:#fff;font-size:0;left:0;right:0;top:0;bottom:0;z-index:99990;position:fixed'#/onmouseover=alert('xss:'+document.cookie);")
 ```
 
-_Details TBA._
+![XSS](/media/bitbucket.xss.png)
 
-██████████████████████████████████████████████████████████████████████████████████████.
+PoC 2:
+~~~md
 
-Note: ███████████████████████ managed to disclose the XSS vulnerability before fixing it by testing the PoC in a pub███████████
-█████ production server, soon after I reported the issue and provided the PoC privately, and it was public until I noticed that
-after 19 hours.
+```
+#!lolcoad.0000123
+lol
+```
+~~~
+
+![XSS](/media/bitbucket.poc2.png)
+
+I was surprised by the fact that Bitbucket does not use Content Security Policy at all (they said that they are in the process of adding it).
+
+Note: Atlassian security team managed to disclose the XSS vulnerability before fixing it by testing the PoC in a public repo issues
+on their production server, soon after I reported the issue and provided the PoC privately, and it was public until I noticed that
+after 19 hours. Explanation was the following: «testing your PoC to make sure it was reproducible».
+_They acknowledged that it was accidential — the test repository itself was private, but its issue tracker
+was public. I was able to find my PoC in that public issue tracker, though.
+That repo permissions were fixed in an hour after I noticed that._
+
+This issue has been passed to the development team after 50 days from the inital report.
+
+An incomplete fix was deployed 57 days after the report — that covered only the first one of the originally reported PoCs
+(the other one did not execute arbitrary JS code, though).
+
+The complete fix was deployed after 78 days from the initial report.
+
+Timeline:
+* Discovered: 2017-04-03
+* Reported: 2017-04-03
+* Confirmed by Atlassian Security team: 2017-04-03
+* PoC leaked to a public repo issues by Atlassian Security team: 2017-04-03
+* Issue was assigned to the Bitbucket development team: 2017-05-23
+* Incomplete fix deployed (covered only the first PoC): 2017-05-30
+* Complete fix deployed: 2017-06-20
 
 ### TBA 2
 
@@ -439,7 +471,7 @@ a good one, send me a link, I will include that link here.
 ---
 
 Published (partially): 2017-04-13, 9:01 UTC. \
-Updated with _TBA_ disclosure: _TBA_. \
+Updated with Bitbucket XSS disclosure: 2017-06-26 15:40 UTC. \
 Updated with _TBA 2_ disclosure: _TBA_. \
 Updated with YouTrack disclosure: 2017-04-25, 9:34 UTC.
 
