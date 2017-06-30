@@ -138,6 +138,7 @@ I will not include the full list (it won't fit here), nor will I include all the
 [rework](https://www.npmjs.com/package/rework),
 [ionic](https://www.npmjs.com/package/ionic),
 [**normalize.css**](https://www.npmjs.com/package/normalize.css),
+[**electron**](https://www.npmjs.com/package/electron),
 [n](https://www.npmjs.com/package/n),
 [**react-native**](https://www.npmjs.com/package/react-native),
 [**ember**-cli](https://www.npmjs.com/package/ember-cli),
