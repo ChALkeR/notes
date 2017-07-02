@@ -1,7 +1,9 @@
 # Gathering weak npm credentials
 
-_Or how I obtained direct publish access to 13% of npm packages (including popular ones)._\
-_The estimated number of packages potentially reachable through dependency chains is 52%._
+_Or how I obtained direct publish access to 14% of npm packages (including popular ones)._\
+_The estimated number of packages potentially reachable through dependency chains is 53%._
+
+_Numbers updated on 2017-07-01 — minor changes and fixes._
 
 ---
 
@@ -41,28 +43,28 @@ The main task of this post is to show the dangers of using weak/reused/leaked pa
 
 ## Results
 
-In total, there were 66876 public packages from 15495 accounts directly affected — about 13% of the whole npm ecosystem.
+In total, there were 70814 public packages from 16427 accounts directly affected — about 14% of the whole npm ecosystem.
 
-Taking dependencies into an account, to my estimations about 52% of the ecosystem was affected — i.e. that number of packages install affected ones along with them through dependency chains.
+Taking dependencies into an account, to my estimations about 53% of the ecosystem was affected — i.e. that number of packages install affected ones along with them through dependency chains.
 
 _That said, dependency chains and semver are not the culprits — grouping deps into larger modules wouldn't have fixed anything and breaking semver would have caused more security problems.
 I will (hopefully) cover that later, but [@joepie91](https://github.com/joepie91) has some notes about that in [his gist](https://gist.github.com/joepie91/828532657d23d512d76c1e68b101f436)._
 
 ### Overall
-* In total, I found **15568 valid credentials for 15495 accounts** since this May.
-* Of those, 15343 accounts have published something (I was targeting only those for everything but npm credentials leaks). The total number of such accounts on npm was 125665, so that gives us **12% of accounts with leaked or weak credentials**.
-* The total number of directly affected packages was **66876 — 13% of the ecosystem**.
-* The total percentage of indirectly affected packages is estimated to be about **52% of the ecosystem** — that is, including packages affected by dependencies.
+* In total, I found **16520 valid credentials for 16427 accounts** since this May.
+* Of those, 16243 accounts have published something (I was targeting only those for everything but npm credentials leaks). The total number of such accounts on npm was 125665, so that gives us **13% of accounts with leaked or weak credentials**.
+* The total number of directly affected packages was **70814 — 14% of the ecosystem**.
+* The total percentage of indirectly affected packages is estimated to be about **53% of the ecosystem** — that is, including packages affected by dependencies.
 * I obtained accounts of **4 users from the top-20 list**.
 * Of the affected accounts, **40 users had more than 10 million downloads/month (each)**. _For comparison, `express` package has 13 million downloads/month atm._ **13 users had more than 50 million downloads/month**.
 * One of the passwords with access to publish [koa](https://www.npmjs.com/package/koa) **was literally «`password`»**.
 * One of the users directly controlling more than 20 million downloads/month chose to improve their previously revoked leaked password by adding a `!` to it at the end.
 * One of those 4 users from the top-20 list set their password back to the leaked one shortly after it was reset (so it got reset again).
 * At least one password was significantly inappropriate — to the extent that one wouldn't want that to be linked to them online and could be publicly blamed in that case (i.e. not just a swearword). [Don't use offensive passwords](https://medium.com/@malcomvetter/offensive-passwords-451371ccd02e) — those could (and in this case were) leaked to the public in cleartext.
-* **662 users had password «`123456`», 168 — «`123`», 115 — «`password`»**.
+* **662 users had password «`123456`», 174 — «`123`», 124 — «`password`»**.
 * **1409 users (1%) used their username as their password**, in its original form, without any modifications.
 * **10% of users reused their leaked passwords**: 9.7% — directly, and 0.6% — with very minor modifications.
-* Total downloads/month of the unique packages which I got myself publish access to was 1 946 302 172, that's **20% of the total number of d/m** directly.
+* Total downloads/month of the unique packages which I got myself publish access to was 1 949 891 090, that's **20% of the total number of d/m** directly.
 
 ### Packages
 
@@ -157,19 +159,19 @@ Overall, 46 packages have more than 10 million downloads/month (of those, 22 are
 
 _Note that some of those packages have had the number of owners reduced since then, so attempting to guess the affected users by that is likely to give wrong results. I specifically excluded packages owned by single users from the list — there were significant ones. Also, npm registry and website both sometimes return the owners list incorrectly, and that is the case for at least some of the above-mentioned packages._
 
-I got publish access to [component-emitter](https://www.npmjs.com/package/component-emitter) (and a lot more related) via 10 independent users, to [domify](https://www.npmjs.com/package/domify) — via 9 users, [array-parallel](https://www.npmjs.com/package/array-parallel) and a lot of [mongodb-js](https://github.com/mongodb-js) components — via 5 users each, [superagent](https://www.npmjs.com/package/superagent) — via 3 users, [cheerio](https://www.npmjs.com/package/cheerio), [browserify](https://www.npmjs.com/package/browserify), [koa](https://www.npmjs.com/package/koa), [mongoose](https://www.npmjs.com/package/mongoose), [modernizr](https://www.npmjs.com/package/modernizr), [react](https://www.npmjs.com/package/react), [tape](https://www.npmjs.com/package/tape), [winston](https://www.npmjs.com/package/winston), [ws](https://www.npmjs.com/package/ws) — via 2 users each. I'm also not listing all of those, 1819 packages in total were accessible through more than one user, 38 of those with more than 1 millon downloads/month, 7 — with more than 10 million downloads/month.
+I got publish access to [component-emitter](https://www.npmjs.com/package/component-emitter) (and a lot more related) via 10 independent users, to [domify](https://www.npmjs.com/package/domify) — via 9 users, [array-parallel](https://www.npmjs.com/package/array-parallel) and a lot of [mongodb-js](https://github.com/mongodb-js) components — via 5 users each, [superagent](https://www.npmjs.com/package/superagent) — via 3 users, [cheerio](https://www.npmjs.com/package/cheerio), [browserify](https://www.npmjs.com/package/browserify), [koa](https://www.npmjs.com/package/koa), [mongoose](https://www.npmjs.com/package/mongoose), [modernizr](https://www.npmjs.com/package/modernizr), [react](https://www.npmjs.com/package/react), [tape](https://www.npmjs.com/package/tape), [winston](https://www.npmjs.com/package/winston), [ws](https://www.npmjs.com/package/ws) — via 2 users each. I'm also not listing all of those, 2237 packages in total were accessible through more than one user, 40 of those with more than 1 millon downloads/month, 7 — with more than 10 million downloads/month.
 
 ### Detailed
-* Bruteforce attack using very weak passwords gave me 5470 total packages from 2545 accounts.
-* [Utilizing](https://twitter.com/slatestarcodex/status/854382497261596676) datasets from known public leaks gave me 57112 total packages from 12150 accounts (directly).
-* Fuzzing the passwords from those known public leaks a bit (appending numbers, replacing other company names with «`npm`», etc) gave me 4786 packages from 732 accounts.
-* New npm credentials leaks (GitHub, Google, etc) gave me 582 total packages from 120 accounts.
+* Bruteforce attack using very weak passwords gave me 5994 total packages from 2803 accounts.
+* [Utilizing](https://twitter.com/slatestarcodex/status/854382497261596676) datasets from known public leaks gave me 58641 total packages from 12710 accounts (directly).
+* Fuzzing the passwords from those known public leaks a bit (appending numbers, replacing other company names with «`npm`», etc) gave me 6772 packages from 852 accounts.
+* New npm credentials leaks (GitHub, Google, etc) gave me 586 total packages from 126 accounts.
 
 #### Leaks of npm credentials on GitHub and other places
 
 These are some of the packages that I got myself publish access to by collecting npm credentials leaked to various places recently: [conventional-changelog](https://www.npmjs.com/package/conventional-changelog), [fetch-mock](https://www.npmjs.com/package/fetch-mock), [sweetalert2](https://www.npmjs.com/package/sweetalert2).
 
-In total, there were 120 accounts and 582 packages.
+In total, there were 126 accounts and 586 packages.
 
 This is mostly covered in the [previous post](Do-not-underestimate-credentials-leaks.md) — I made a tool to automatically gather those using the GitHub API, and validate gathered results on npm `/whoami`. I shared that tool with npm, Inc.
 
@@ -177,7 +179,7 @@ Some of those were manually collected (i.e. not on GitHub) — for example, npm 
 
 #### Bruteforce
 
-I gathered 2545 accounts from bruteforce, controlling 5470 total packages and 217 690 203 d/m directly.
+I gathered 2803 accounts from bruteforce, controlling 5994 total packages and 217 721 073 d/m directly.
 
 I got direct publish access to a number of packages, including, but not limited to, the following ones (ordered by downloads/month):
 
@@ -193,7 +195,7 @@ The bruteforcer activity was noticed and prevented (via an IP ban) after approx 
 
 #### Reused passwords leaked from other services
 
-This gave me 57112 total packages from 12150 accounts directly, totaling to 1 693 349 422 downloads/month.
+This gave me 58641 total packages from 12710 accounts directly, totaling to 1 694 100 233 downloads/month.
 
 As that is the most part of the data — I will not repeat the affected packages list.
 
@@ -207,7 +209,7 @@ By «fuzzing» I mean performing modifications to passwords gained from third-pa
 
 Fuzzing included (among other attempted modifications): changing the capitalization, appending/removing digits (and other symbols) at the end, replacing company names with `npm`, appending/prepending `@npm` (and others), and other various changes. That was quickly achievable because there were already known potential passwords matched for each account — and there were not too many of those, so even multiplying those by one or two orders of magnitude (depending on the account significance) was possible.
 
-That gave me 4786 packages from 732 accounts. The top package gained that way had 10 millon downloads/month, and the total was 171 174 218 d/m.
+That gave me 6772 packages from 852 accounts. The top package gained that way had 10 millon downloads/month, and the total was 171 940 255 d/m.
 
 [react](https://www.npmjs.com/package/react), [redux](https://www.npmjs.com/package/redux), [browserify](https://www.npmjs.com/package/browserify), [rollup](https://www.npmjs.com/package/rollup), [sinon](https://www.npmjs.com/package/sinon), and other packages were directly affected.
 
