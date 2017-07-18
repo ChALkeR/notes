@@ -115,7 +115,7 @@ _[TBA 2](#tba-2)_,
 [Upsource](#upsource),
 [JIRA](#jira).
 
-Of those, [Butbucket](#bitbucket), [TBA 2](#tba-2), [YouTrack](#youtrack), and [Upsource](#upsource) issues are not related to unsanitized `class` atribute.
+Of those, [Bitbucket](#bitbucket), [TBA 2](#tba-2), [YouTrack](#youtrack), and [Upsource](#upsource) issues are not related to unsanitized `class` atribute.
 Note that the first two of those don't satisfy the [prerequisites](#introduction) — Bitbucket does not support HTML markup in Markdown at all, and
 ███████ ███████ █████████ ██████ ████████████.
 They managed to fail markup sanitization in other ways, though, and that's the reason for them to be included in this writeup.
