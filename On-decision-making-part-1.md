@@ -51,7 +51,7 @@ If anyone has better ideas — any suggestions are welcomed (including an argume
  * _(minor)_ Technically, it's possible to bring in an issue for a resolution/vote almost immediately before a CTC meeting and get a resolution there either from consensus of present members or a vote. The problem here is that if this goes really quickly, some input from non-present CTC members could be missing, and if they were present — opinions of other memebers could have changed through a regular discussion.
    I think that this is minor, as we don't actually jump to voting without a prior discussion.
    That said, we _could_ specify a time slot that an issue should have been labeled as `ctc-review` before being brought to the meeting (or a similar way to inform CTC members in advance for private topics).
- * `ctc-agenda` rules assume that it could be assigned only when the consensus-seeking process among CTC memebrs have previously failed. It doesn't look that that is accurately followed. Most likely it's a documentation issue. See [#11325](https://github.com/nodejs/node/issues/11325).
+ * ~`ctc-agenda` rules assume that it could be assigned only when the consensus-seeking process among CTC memebrs have previously failed. It doesn't look that that is accurately followed. Most likely it's a documentation issue. See [#11325](https://github.com/nodejs/node/issues/11325).~ _Upd 2017-10-30: this has been fixed._
 
 ### What should be noted when changing anything
   * In most cases, the established process works good — that should not be broken.
@@ -95,4 +95,4 @@ This mostly duplicates the previous section, but is a bit more specific.
  3. Investigate methods to collect and record options and opinions (Google Spreadsheets)?
  4. Investigate methods of resolving disagreement — would something like that be useful here?
  5. Differentiate between issues that are expected to be controversial and not, treat them differently — the former could need a devils advocate, while the latter could be brought back to GitHub even before the meeting happens.
- 6. Discuss what to do with CTC-related labels.
+ 6. ~Discuss what to do with CTC-related labels.~ _Upd 2017-10-30: not needed anymore._
