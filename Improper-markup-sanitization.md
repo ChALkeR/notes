@@ -110,14 +110,14 @@ I have found and reported markup sanitization related issues in: \
 [GitHub](#github), [GitLab](#gitlab),
 [Bitbucket](#bitbucket),
 [Gogs](#gogs), [Gitea](#gitea), [Redmine](#redmine),
-_[TBA 2](#tba-2)_,
+[Vanilla Forums](#vanilla),
 [YouTrack](#youtrack),
 [Upsource](#upsource),
 [JIRA](#jira).
 
-Of those, [Bitbucket](#bitbucket), [TBA 2](#tba-2), [YouTrack](#youtrack), and [Upsource](#upsource) issues are not related to unsanitized `class` atribute.
+Of those, [Bitbucket](#bitbucket), [Vanilla Forums](#vanilla), [YouTrack](#youtrack), and [Upsource](#upsource) issues are not related to unsanitized `class` atribute.
 Note that the first two of those don't satisfy the [prerequisites](#introduction) — Bitbucket does not support HTML markup in Markdown at all, and
-███████ ███████ █████████ ██████ ████████████.
+Vanilla doesn't have code syntax highlighting.
 They managed to fail markup sanitization in other ways, though, and that's the reason for them to be included in this writeup.
 
 See below for the detailed vulnerabilities information, PoC examples and screenshots.
@@ -259,7 +259,6 @@ The HTML specification is maintained by the W3C.
 
 PoC 2:
 ~~~md
-
 ```
 #!lolcoad.0000123
 lol
@@ -293,26 +292,43 @@ Timeline:
 * Incomplete fix deployed (covered only the first PoC): 2017-05-30
 * Complete fix deployed: 2017-06-20
 
-### TBA 2
+### Vanilla
 
-An issue in _TBA 2_ allowed arbitrary user content in `style` attribute (not related to `class` not being sanitized), which could
+_Fixed in Vanilla [2.5.0](https://github.com/vanilla/vanilla/tags) / htmlLawed [1.2.1.1](http://www.bioinformatics.org/phplabware/internal_utilities/htmLawed/htmLawed_README.htm#s4.3)._
+
+An issue in Vanilla Forums allowed arbitrary user content in `style` attribute (not related to `class` not being sanitized), which could
 be used to obtain any desired look of the page (forging other people content, etc).
 
-![Fullsize message on TBA2](/media/tba2.1.fullsize.png)
+User-specified `align` attribute value was inserted into actual `style` attribute, and that was done without proper
+sanitization or escaping.
+
+The upstream issue was in the HTML sanitizer that they use,
+[htmLawed](http://www.bioinformatics.org/phplabware/internal_utilities/htmLawed/) (actually, it's [fork](https://github.com/vanilla/htmlawed)).
+
+![Fullsize message on YDN Forums](/media/yahoodevelopers.fullsize.png)
+
+![Fullsize message on LowEndTalk](/media/lowendtalk.fullsize.png)
 
 PoC:
 ```html
-TBA
+<div align="center;display:block;position:fixed;left:0;right:0;bottom:0;top:0;z-index:1000;background:white;margin;0">
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p><img src="https://s.yimg.com/oo/fe/images/YDN-Logo_1cb4ad89f.png"></p>
+  <p align="center;font-size:25px">Hello there! Something has gone wrong, we are working on it.</p>
+  <p align="center;font-size:20px">In the meantime, play a game with us at&nbsp;<a href="http://example.com/">example.com</a>.</p>
+</div>
 ```
 
-![Fullsize message on TBA2](/media/tba2.2.fullsize.png)
-
-PoC:
-```html
-TBA
-```
-
-_Details TBA._
+Timeline:
+* Discovered on Vanilla Forums: 2017-03-29
+* Reported to Vanilla Operations: 2017-03-29
+* Confirmed by Vanilla Operations and redirected to htmlLawed: 2017-03-31
+* Confirmed by htmlLawed: 2017-05-15
+* Initial fix by htmlLawed: 2017-05-15 (v1.2.1)
+* Initial fix by htmlLawed proven incomplete: 2017-05-17 (`align="1&#x3b; background&#x3a; red"`)
+* Updated fix by htmlLawed: 2017-05-17 (v1.2.1.1)
+* Vanilla Forums 2.5.0 release, containing the fix: 2017-12-23
 
 ### YouTrack
 
@@ -472,7 +488,7 @@ a good one, send me a link, I will include that link here.
 
 Published (partially): 2017-04-13, 9:01 UTC. \
 Updated with Bitbucket XSS disclosure: 2017-06-26 15:40 UTC. \
-Updated with _TBA 2_ disclosure: _TBA_. \
+Updated with Vanilla Forums disclosure: 2018-01-08, 20:50:00 UTC. \
 Updated with YouTrack disclosure: 2017-04-25, 9:34 UTC.
 
 If you have any questions to me, contact me over Gitter ([@ChALkeR](https://gitter.im/ChALkeR)) or IRC (ChALkeR@freenode).
