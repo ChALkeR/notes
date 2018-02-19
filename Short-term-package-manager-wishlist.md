@@ -29,14 +29,14 @@ _Notice: this list might be updated in the future._
 ## Registry API — users and package uploads
 
  1. 2FA:
-  * Opt-in — to get a token
-  * Opt-in — for confirming _all_ publishes done by a user
+  * **Done (2017).** ~Opt-in — to get a token~
+  * **Done (2017).** ~Opt-in — for confirming _all_ publishes done by a user~
   * There should be an option to enforce 2FA (login/publish) per-package that would make all further actions done to this package require a verification code.
- 2. Email notifications on any updates to the owned packages, to the profile or to the list of owned packages
+ 2. Email notifications on any updates to the owned packages, to the profile or to the list of owned packages — _partially implemented as of 2018-02, only for own publishes._
  3. Webpage-based notifications to any of the above (i.e. just a list of all write actions by oneself on npmjs.com).
  4. Don't actually publish packages with npm credentials, run scans _prior_ to the publishing, not _after_ the package was already published.
  5. Is there a proper bruteforce prevention mechanism running? I hadn't noticed it.
- 6. **Done.** ~~Warn users on too simple passwords — too short, known weak, same as login with minor modifications, etc.~~
+ 6. **Done (2017).** ~~Warn users on too simple passwords — too short, known weak, same as login with minor modifications, etc.~~
 
 ## General ecosystem and communication, including website interface (public)
 
