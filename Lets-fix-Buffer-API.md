@@ -27,19 +27,19 @@ _Note that the implications of using `Buffer.allocUnsafe()` and `Buffer.allocUns
 
 Note: none of those describes any previously unknown vulnerability in Node.js, this is how the API was designed. The problem is in the fact that it's very easy to use the current API in an unsafe way, and there were various libraries hitting that (and probably many more still are).
 
- 1. [Node.js Buffer knows everything](./Buffer-knows-everything.md), describing the possible consequences of using uninitialized `Buffer`s.
- 2. [Node.js issue #4660](https://github.com/nodejs/node/issues/4660) — Buffer(number) is unsafe.
- 3. [Node.js pull #2586](https://github.com/nodejs/node/pull/2586) — buffer: introduce zero-fill option in constructor.
- 4. [Node.js pull #2574](https://github.com/nodejs/node/pull/2574) — doc: minor clarification in buffer.markdown.
- 5. [Node.js archive pull #9104](https://github.com/nodejs/node-v0.x-archive/pull/9104) — Documentation update about Buffer initialization.
- 6. [`ws` release](https://github.com/websockets/ws/releases/tag/1.0.1) fixing it's vulnerability caused by inaccurate `Buffer(number)` usage.
+1. [Node.js Buffer knows everything](./Buffer-knows-everything.md), describing the possible consequences of using uninitialized `Buffer`s.
+2. [Node.js issue #4660](https://github.com/nodejs/node/issues/4660) — Buffer(number) is unsafe.
+3. [Node.js pull #2586](https://github.com/nodejs/node/pull/2586) — buffer: introduce zero-fill option in constructor.
+4. [Node.js pull #2574](https://github.com/nodejs/node/pull/2574) — doc: minor clarification in buffer.markdown.
+5. [Node.js archive pull #9104](https://github.com/nodejs/node-v0.x-archive/pull/9104) — Documentation update about Buffer initialization.
+6. [`ws` release](https://github.com/websockets/ws/releases/tag/1.0.1) fixing it's vulnerability caused by inaccurate `Buffer(number)` usage.
 
    *Note: their release note contains severe mistakes, please check [this nodesecurity advisory](https://nodesecurity.io/advisories/67) instead.*
- 7. [Node Security Project advisory 67](https://nodesecurity.io/advisories/67) on the above-mentioned `ws` issue.
- 8. [Node Security Project advisory 68](https://nodesecurity.io/advisories/68) on the `bittorent-dht` inaccurate `Buffer(number)` usage.
- 9. Private discussions.
- 10. [Mongoose vulnerability](https://github.com/Automattic/mongoose/issues/3764) — assigning a number to the property that is `Buffer`-typed saves uninitialized memory block to the DB. [POC](https://gist.github.com/ChALkeR/d4a8055625221b6e65f0).
- 11. [Node.js pull #4514](https://github.com/nodejs/node/pull/4514) — buffer: throw if both length and enc are passed.
+7. [Node Security Project advisory 67](https://nodesecurity.io/advisories/67) on the above-mentioned `ws` issue.
+8. [Node Security Project advisory 68](https://nodesecurity.io/advisories/68) on the `bittorent-dht` inaccurate `Buffer(number)` usage.
+9. Private discussions.
+10. [Mongoose vulnerability](https://github.com/Automattic/mongoose/issues/3764) — assigning a number to the property that is `Buffer`-typed saves uninitialized memory block to the DB. [POC](https://gist.github.com/ChALkeR/d4a8055625221b6e65f0).
+11. [Node.js pull #4514](https://github.com/nodejs/node/pull/4514) — buffer: throw if both length and enc are passed.
 
 ## Is there a problem?
 
