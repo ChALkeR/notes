@@ -4,6 +4,7 @@ I am not a native English speaker, so please excuse any language mistakes.
 
 Contents
 --
+ * [Enumerating Bitbucket repos and private issue titles](https://github.com/ChALkeR/notes/blob/master/Enumerating-Bitbucket-repos-and-private-issue-titles.md) (2018-05-10)
  * [On Node.js CTC decision making (part 1)](https://github.com/ChALkeR/notes/blob/master/On-decision-making-part-1.md) (2017-05-05/2017-08-30)
  * [Gathering weak npm credentials](https://github.com/ChALkeR/notes/blob/master/Gathering-weak-npm-credentials.md)  (2017-06-21)
  * [Improper markup sanitization in popular software](https://github.com/ChALkeR/notes/blob/master/Improper-markup-sanitization.md)  (2017-04-13)
