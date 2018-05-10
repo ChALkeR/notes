@@ -1,8 +1,8 @@
 # Enumerating Bitbucket repos and private issue titles
 
-This is a short dislosure of an already fixed vulnerability which I reported to Atlassian security in May 2017 and that was fixed back in August 2017. It should have been published long ago, but writing this note was delayed due to me being busy with [npm password re-use](Gathering-weak-npm-credentials.md) and other things, and with a burn-out after that.
+This is a short disclosure of an already fixed vulnerability which I reported to Atlassian Security in May 2017 and that was fixed back in August 2017. It should have been published long ago, but writing this note was delayed due to me being busy with [npm password re-use](Gathering-weak-npm-credentials.md) and other things, and with a burn-out after that.
 
-This vulnerability allowed unauthorized users to read issue/pr titles of all the private Bitbucket repos, enumerating those using repo IDs (which look to be incremental).
+This vulnerability allowed unauthorized users to read issue/pr titles of all the private [Bitbucket](https://bitbucket.org/) repos, enumerating those using repo IDs (which look to be incremental).
 
 I think that this has some value published even now. I'm still struggling with some personal problems, so this would be a rather short note. _I also have several more on the backlog (not related to Bitbucket, though) :wink:_.
 
@@ -50,5 +50,5 @@ _The «XSS» part is from another issue — see [here](Improper-markup-sanitizat
 If you have any questions to me, contact me over [Gitter](https://gitter.im/ChALkeR) (@ChALkeR) or IRC (ChALkeR@freenode).
 
 This vulnerability report was not covered by any bounty reward programs, and I did not receive a monetary reward for it.\
-If you want to support me so that I would be able to to keep what I am doing, consider supporting me on [Patreon](https://www.patreon.com/ChALkeR).\
+If you want to support me so that I would be able to keep doing what I am doing, consider supporting me on [Patreon](https://www.patreon.com/ChALkeR).\
 Current supporters are listed on my [fundraising](https://github.com/ChALkeR/fundraising#personal-fundraising) page.
