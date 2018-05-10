@@ -491,4 +491,18 @@ Updated with Bitbucket XSS disclosure: 2017-06-26 15:40 UTC. \
 Updated with Vanilla Forums disclosure: 2018-01-08, 20:50:00 UTC. \
 Updated with YouTrack disclosure: 2017-04-25, 9:34 UTC.
 
+---
+
+Of all the mentioned parties, GitHub provided a monetary [bounty](https://bounty.github.com/researchers/ChALkeR.html) for the vulnerability report.
+_(Thanks, GitHub)!_
+
+Interestingly, the products that suffered the most serious form of the vulnerability here (i.e. arbitrary JavaScript code in XSS) —
+namely [Bitbucket](#bitbucket), [YouTrack](#youtrack), [Upsource](#upsource) — were all closed-source and all did not have any bug
+bounty program and did not provide monetary rewards.
+
+_There might be some correlation there and perhaps there is even some lesson, but I don't want to write it down here, so guess yourself._
+
+If you want to support me so that I would be able to keep doing what I am doing, consider supporting me on [Patreon](https://www.patreon.com/ChALkeR).\
+Current supporters are listed on my [fundraising](https://github.com/ChALkeR/fundraising#personal-fundraising) page.
+
 If you have any questions to me, contact me over Gitter ([@ChALkeR](https://gitter.im/ChALkeR)) or IRC (ChALkeR@freenode).
