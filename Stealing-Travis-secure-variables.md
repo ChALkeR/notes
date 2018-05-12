@@ -99,3 +99,11 @@ GitHub does not view anything mentioned here as a security issue on their side (
 ---
 
 The fun thing is that it took me less than an hour to go from «could I somehow steal private variables from Travis» to the PoC above and about two hours to find the Travis security contact (yes, there is one).
+
+---
+
+If you have any questions to me, contact me over Gitter ([@ChALkeR](https://gitter.im/ChALkeR)) or IRC (ChALkeR@freenode).
+
+These vulnerability reports were not covered by any bounty reward programs, and I did not receive a monetary reward for it.\
+If you want to support me so that I would be able to keep doing what I am doing, consider supporting me on [Patreon](https://www.patreon.com/ChALkeR).\
+Current supporters are listed on my [fundraising](https://github.com/ChALkeR/fundraising#personal-fundraising) page.

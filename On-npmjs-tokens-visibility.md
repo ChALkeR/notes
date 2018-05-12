@@ -158,3 +158,7 @@ In case you wonder, the token on the screenshot isn't an actual npm auth token a
 Published: 2016-10-18.
 
 If you have any questions to me, contact me over Gitter ([@ChALkeR](https://gitter.im/ChALkeR)) or IRC (ChALkeR@freenode).
+
+These vulnerability reports were not covered by any bounty reward programs, and I did not receive a monetary reward for it.\
+If you want to support me so that I would be able to keep doing what I am doing, consider supporting me on [Patreon](https://www.patreon.com/ChALkeR).\
+Current supporters are listed on my [fundraising](https://github.com/ChALkeR/fundraising#personal-fundraising) page.

@@ -251,3 +251,12 @@ Published: 2015-12-04.
 Historic revisions (which are not in this repo): https://gist.github.com/ChALkeR/7485b79f6ef15768a309/revisions?page=2
 
 If you have any questions to me, contact me over [Gitter](https://gitter.im/ChALkeR) (@ChALkeR) or IRC (ChALkeR@freenode).
+
+In regards to `.npmrc` credentials leaks, I have been sending emails to many people and companies who did that,
+until npm, Inc. started properly taking care of that from their side.\
+I received a significant bounty from one thirdparty company that have published their `.npmrc` file for disclosing that to them
+(though they did not have a public bounty program).
+
+The vulnerability in npm itself (credentials leak to `config.gypi`) was not covered by any bounty reward programs.\
+If you want to support me so that I would be able to keep doing what I am doing, consider supporting me on [Patreon](https://www.patreon.com/ChALkeR).\
+Current supporters are listed on my [fundraising](https://github.com/ChALkeR/fundraising#personal-fundraising) page.

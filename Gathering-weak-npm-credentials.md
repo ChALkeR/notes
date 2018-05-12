@@ -320,3 +320,7 @@ As 2FA on the client seems to be complex and will likely take long time to imple
 Published: 2017-06-21 20:30 UTC.
 
 If you have any questions to me, contact me over [Gitter](https://gitter.im/ChALkeR) (@ChALkeR) or IRC (ChALkeR@freenode).
+
+This analysis was not covered by any bounty reward programs, and I did not receive a monetary reward for it.\
+If you want to support me so that I would be able to keep doing what I am doing, consider supporting me on [Patreon](https://www.patreon.com/ChALkeR).\
+Current supporters are listed on my [fundraising](https://github.com/ChALkeR/fundraising#personal-fundraising) page.
