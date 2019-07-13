@@ -26,6 +26,8 @@ given that the developer performs `yarn install` on such a `yarn.lock` file.
 * 2019-07-12 21:42 UTC - Fixed version (v1.17.3) released as `latest`
 * 2019-07-13 08:40 UTC - Yarn blog post published
 
+The timeline was really good on this, this was found, accepted, fixed, and deployed in the same day.
+
 ## Impact
 
 Attacker (MitM) being able to:
