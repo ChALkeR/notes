@@ -1,7 +1,7 @@
 _First of all, an affiliation change notice (this is recent):\
 I am currently working for [Exodus](https://www.exodus.io/) and am sponsored by them to perform security research._
 
-# Yarn transfered npm credentials over unencrypted http connection
+# Yarn transferred npm credentials over unencrypted http connection
 
 This was reported by me through the [Node.js third-party modules](https://hackerone.com/nodejs-ecosystem) program
 and was fixed in the just-released yarn v1.17.3. See also [yarn blog post](https://yarnpkg.com/blog/2019/07/12/recommended-security-update/) on this.
@@ -9,7 +9,7 @@ and was fixed in the just-released yarn v1.17.3. See also [yarn blog post](https
 ## Vulnerability description
 
 For scoped packages that are listed as `resolved "http://registry.npmjs.org/@`... in `yarn.lock`, affected [yarn](https://www.npmjs.com/package/yarn) versions
-trasfer npm credentials (i.e. `_authToken`) over unencrypted http connection.
+transfer npm credentials (i.e. `_authToken`) over unencrypted http connection.
 This allows any MitM (for example, a proxy or a VPN, or a cafeteria Wi-Fi) to sniff out npm credentials,
 given that the developer performs `yarn install` on such a `yarn.lock` file.
 
@@ -89,7 +89,7 @@ who is interested:
 1. Perform an npm login or just write `//registry.npmjs.org/:_authToken=38bb8d1f-a39b-47d1-a78e-3bf0626ff77e` (which is the format npm uses) to ~/.npmrc. Doing this from your own account would leak your npm credentials on next steps, so better just use a placeholder.
 2. Create an empty package with a single dependency on `"@babel/core": "^7.5.4"`
 3. Perform `yarn install`
-4. Replace all occurances of `https://registry.yarnpkg.com` with `http://registry.npmjs.org/` in the generated `yarn.lock`
+4. Replace all occurrences of `https://registry.yarnpkg.com` with `http://registry.npmjs.org/` in the generated `yarn.lock`
 
    Alternatively to steps 2-4 -- just use an already existing yarn.lock with `resolved "http://registry.npmjs.org/@` in it (lots of those on GitHub), but be careful with that.
 5. Clear yarn cache and node_modules: `rm -rf ~/.cache/yarn/ node_modules`. Let's assume you just downloaded an affected `yarn.lock` on your clean machine.
