@@ -60,6 +60,9 @@ Some historic examples in facebook repos: [docusaurus](https://github.com/facebo
 * Make sure that your `yarn.lock` files do not have entries resolved to `http://` registries.
 * Enable 2FA on npm for logins and publishes, if you haven't done so already.
 
+As a side note: periodically rotating your npm tokens (i.e. revoking them and doing a re-login) is a good idea in general.
+Also, don't forget to keep track of your tokens through the [Settings -> Tokens](https://www.npmjs.com/settings/~/tokens) page.
+
 ## How to check if a certain repo was affected?
 
 Use the following command, for example:
