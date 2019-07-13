@@ -10,8 +10,8 @@ and was fixed in the just-released yarn v1.17.3. See also [yarn blog post](https
 
 For scoped packages that are listed as `resolved "http://registry.npmjs.org/@`... in `yarn.lock`, affected [yarn](https://www.npmjs.com/package/yarn) versions
 trasfer npm credentials (i.e. `_authToken`) over unencrypted http connection.
-This allows any MitM (for example, a proxy or a VPN) to sniff out npm credentials, given that the developer performs
-`yarn install` on such a `yarn.lock` file.
+This allows any MitM (for example, a proxy or a VPN, or a cafeteria Wi-Fi) to sniff out npm credentials,
+given that the developer performs `yarn install` on such a `yarn.lock` file.
 
 ## Timeline
 
@@ -42,14 +42,14 @@ There seem to be many of those.
 
 Looks like not only it was possible to craft a `yarn.lock` with a malicious intent, but also this seems to be a common pattern that yarn created itself at some point or under some circumstances and that gets persistent from older versions.
 
-Yarn explanation:
+Yarn explanation (from their [blog post](https://yarnpkg.com/blog/2019/07/12/recommended-security-update/)):
 > For a few months in 2018, the npm registry [returned http urls instead of the regular https ones](https://npm.community/t/some-packages-have-dist-tarball-as-http-and-not-https/285/40). Although the problem seems to have been corrected earlier this year, the lockfile entries generated during this period may still reference http urls and cause Yarn to send authentication data unencrypted.
 
 This looks very common, mostly coming from `@babel` and `@types` scopes.
 
 This could also be exploited with malicious intent -- i.e. an attacker could construct/modify a `yarn.lock` manually to exploit this vuln, not only as a result of that incident in 2018.
 
-I do not think that this is something that is likely to be catched by PR review unless one knows what to look for (examples above show that it was not noticed), so anything in line with "users should have reviewed `yarn.lock` files for this not to happen" does not work as a solution here. The problem is that users probably won't catch that packages being resolved to `http://` could mean that the yarn lock is "compromised". A lot of such existing `yarn.lock` files that no one noticed (even with scoped packages) indicate that.
+I do not think that these deps are something that is likely to be catched by PR review unless one knows what to look for (examples above show that it was not noticed), so anything in line with "users should have reviewed `yarn.lock` files for this not to happen" does not work as a solution here. The problem is that users probably won't catch that packages being resolved to `http://` could mean that the yarn lock is "compromised". A lot of such existing `yarn.lock` files that no one noticed (even with scoped packages) indicate that.
 
 Some historic examples in facebook repos: [docusaurus](https://github.com/facebook/docusaurus/blob/v1.4.0/yarn.lock#L7) (same file [here](https://github.com/facebook/docusaurus/blob/v1.6.0/v1/yarn.lock#L7)), [jest](https://github.com/facebook/jest/blob/v23.4.0/yarn.lock#L101).  Moreover, [yarnpkg/yarn](https://github.com/yarnpkg/yarn) lockfile itself has a `http://`-resolved dep: https://github.com/yarnpkg/yarn/blob/v1.17.3/yarn.lock#L5646. It's not scoped, but that difference might also be subtle while reviewing a PR. There are more of those in git history.
 
