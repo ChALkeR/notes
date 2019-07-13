@@ -22,8 +22,8 @@ given that the developer performs `yarn install` on such a `yarn.lock` file.
 * 2019-07-12 12:47 UTC - Initial response and confirmation from Yarn dev
 * 2019-07-12 13:22 UTC - [Fix PR](https://github.com/yarnpkg/yarn/pull/7393) created by Yarn devs
 * 2019-07-12 14:19 UTC - Fix landed
-* 2019-07-12 15:28 UTC - Fixed version released as `rc`
-* 2019-07-12 21:42 UTC - Fixed version released as `latest`
+* 2019-07-12 15:28 UTC - Fixed version (v1.17.3) released as `rc`
+* 2019-07-12 21:42 UTC - Fixed version (v1.17.3) released as `latest`
 * 2019-07-13 08:40 UTC - Yarn blog post published
 
 ## Impact
