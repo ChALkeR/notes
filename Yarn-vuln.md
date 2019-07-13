@@ -15,16 +15,16 @@ given that the developer performs `yarn install` on such a `yarn.lock` file.
 
 ## Timeline
 
-* Found: 2019-07-12
-* Reported to [Node.js third-party modules](https://hackerone.com/nodejs-ecosystem) program: 2019-07-12 11:31 UTC
-* Triaged: 2019-07-12 12:12 UTC
-* Yarn dev joined the conversation: 2019-07-12 12:19 UTC
-* Initial response and confirmation from Yarn dev: 2019-07-12 12:47 UTC
-* [Fix PR](https://github.com/yarnpkg/yarn/pull/7393) created by Yarn devs: 2019-07-12 13:22 UTC
-* Fix landed: 2019-07-12 14:19 UTC
-* Fixed version released as `rc`: 2019-07-12 15:28 UTC
-* Fixed version released as `latest`: 2019-07-12
-* Yarn blog post published: 2019-07-13 08:20 UTC
+* 2019-07-12 - Found
+* 2019-07-12 11:31 UTC - Reported to [Node.js third-party modules](https://hackerone.com/nodejs-ecosystem) program
+* 2019-07-12 12:12 UTC - Triaged
+* 2019-07-12 12:19 UTC - Yarn dev joined the conversation
+* 2019-07-12 12:47 UTC - Initial response and confirmation from Yarn dev
+* 2019-07-12 13:22 UTC - [Fix PR](https://github.com/yarnpkg/yarn/pull/7393) created by Yarn devs
+* 2019-07-12 14:19 UTC - Fix landed
+* 2019-07-12 15:28 UTC - Fixed version released as `rc`
+* 2019-07-12 21:42 UTC - Fixed version released as `latest`
+* 2019-07-13 08:40 UTC - Yarn blog post published
 
 ## Impact
 
