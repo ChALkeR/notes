@@ -4,6 +4,7 @@ I am not a native English speaker, so please excuse any language mistakes.
 
 Contents
 --
+ * [Yarn transfered npm credentials over unencrypted http connection](https://github.com/ChALkeR/notes/blob/master/Yarn-vuln.md) (2019-07-13)
  * [Enumerating Bitbucket repos and private issue titles](https://github.com/ChALkeR/notes/blob/master/Enumerating-Bitbucket-repos-and-private-issue-titles.md) (2018-05-10)
  * [On Node.js CTC decision making (part 1)](https://github.com/ChALkeR/notes/blob/master/On-decision-making-part-1.md) (2017-05-05/2017-08-30)
  * [Gathering weak npm credentials](https://github.com/ChALkeR/notes/blob/master/Gathering-weak-npm-credentials.md)  (2017-06-21)
