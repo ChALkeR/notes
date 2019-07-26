@@ -278,6 +278,7 @@ As 2FA on the client seems to be complex and will likely take long time to imple
   * Don't reuse the same password on other sites.
   * Make sure that you are not using password-based auth in `.npmrc` — `_authToken` is good, `_auth` and `_password` are bad.
   * Check **all** your logins and emails on [haveibeenpwned.com](https://haveibeenpwned.com). Make sure that you don't forget about historic emails.
+  * Use a good password manager - this would improve your overall security online
   * Check if you have publish access to any popular packages on npm. _Note: some users that I talked to were not aware that they are added to some popular packages._
 * If you have popular packages published on npm:
   * Make sure that the list of people who have the permissions to publish it is not unnecessary huge and does not include unrelated people who are not active, not going to publish that package, or otherwise don't need those permissions.
